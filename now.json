@@ -1,0 +1,37 @@
+{
+    "name": "rock-solid",
+    "version": 2,
+    "alias": [
+        "rock-solid.now.sh"
+    ],
+    "builds": [
+        {
+            "src": "web/package.json",
+            "use": "@now/static-build",
+            "config": {
+                "distDir": "public"
+            }
+        },
+        {
+            "src": "cms/package.json",
+            "use": "@now/static-build",
+            "config": {
+                "distDir": "dist"
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "^/cms/static/(.*)",
+            "dest": "/cms/static/$1"
+        },
+        {
+            "src": "^/cms/(.*)",
+            "dest": "/cms/index.html"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/web/$1"
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+# Dist
+dist/
+
+# Dependency directories
+node_modules/
+
+# Misc
+yarn.lock
