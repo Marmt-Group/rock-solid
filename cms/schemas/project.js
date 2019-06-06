@@ -24,13 +24,27 @@ export default {
             to: { type: 'author' }
         },
         {
+            name: 'type',
+            title: 'Project Type',
+            type: 'reference',
+            to: { type: 'category' }
+        },
+        {
             title: 'description',
             name: 'Description',
             type: 'text'
         },
         {
-            name: 'image',
-            title: 'Project Image',
+            name: 'beforeImage',
+            title: 'Before Image',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
+        {
+            name: 'afterImage',
+            title: 'After Image',
             type: 'image',
             options: {
                 hotspot: true
