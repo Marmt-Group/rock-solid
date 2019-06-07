@@ -1,12 +1,12 @@
 {
   "root": true,
-  "project": {
-    "name": "rock-solid",
-    "basePath": "/cms"
-  },
   "api": {
     "projectId": "g4z72sbo",
     "dataset": "production"
+  },
+  "project": {
+    "name": "rock-solid",
+    "basePath": "/studio"
   },
   "plugins": [
     "@sanity/base",
@@ -14,7 +14,6 @@
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "@sanity/google-maps-input",
     "mux-input"
   ],
   "parts": [

@@ -1,7 +1,7 @@
 require('dotenv').config()
 const {
   api: { projectId, dataset }
-} = requireConfig('../cms/sanity.json')
+} = requireConfig('../studio/sanity.json')
 
 module.exports = {
   siteMetadata: {
@@ -55,7 +55,7 @@ module.exports = {
  */
 function requireConfig(path) {
   try {
-    return require('../cms/sanity.json')
+    return require('../studio/sanity.json')
   } catch (e) {
     console.error(
       'Failed to require sanity.json. Fill in projectId and dataset name manually in gatsby-config.js'

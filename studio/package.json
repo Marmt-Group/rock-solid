@@ -1,0 +1,28 @@
+{
+  "private": false,
+  "name": "rock-solid",
+  "version": "1.0.0",
+  "author": "David Davis <davidjamesdavis.djd@gmail.com>",
+  "scripts": {
+    "graphql-deploy": "sanity graphql deploy --playground",
+    "start": "sanity start",
+    "build": "sanity build",
+    "now-build": "npm run build",
+    "now-dev": "npm run build",
+    "test": "sanity check"
+  },
+  "dependencies": {
+    "@sanity/base": "^0.140.30",
+    "@sanity/cli": "^0.140.30",
+    "@sanity/components": "^0.140.30",
+    "@sanity/core": "^0.140.30",
+    "@sanity/default-layout": "^0.140.30",
+    "@sanity/default-login": "^0.140.15",
+    "@sanity/desk-tool": "^0.140.30",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-icons": "^3.7.0",
+    "sanity-plugin-mux-input": "^0.1.9"
+  }
+}

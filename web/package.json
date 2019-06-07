@@ -32,7 +32,6 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "deploy": "npm run now-deploy",
     "develop": "gatsby develop",
     "empty-cache": "gatsby clean",
     "format": "prettier --write src/**/*.{js,jsx}",
