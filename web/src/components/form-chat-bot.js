@@ -1,10 +1,11 @@
 import React from 'react'
 import { Widget, addResponseMessage } from 'react-chat-widget'
+import config from '../../config.json'
 import 'react-chat-widget/lib/styles.css'
 import './form-chat-bot.scss'
-import openSocket from 'socket.io-client'
+import io from 'socket.io-client'
 
-const socket = openSocket('https://marmt-gcp.appspot.com')
+const socket = io('https://marmt-gcp.appspot.com')
 
 class FormChatBot extends React.Component {
     constructor(props) {
@@ -59,8 +60,8 @@ class FormChatBot extends React.Component {
                     query: {
                         fromNumber: '+18312469107',
                         toNumber: '+14084022790',
-                        twilioAccountSid: 'AC96e8115d0b12679ffa4e34391d79e45c',
-                        twilioAuthToken: 'd4552c20875ccf1160ff03e51dd22e47'
+                        twilioAccountSid: config.twilioAccountSid,
+                        twilioAuthToken: config.twilioAuthToken
                     },
                     message: newMessage
                 }),
