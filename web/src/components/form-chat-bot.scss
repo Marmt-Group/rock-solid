@@ -1,0 +1,17 @@
+.rcw-send {
+    line-height: 0;
+    .rcw-send-icon {
+        margin: 0;
+    }
+}
+
+.rcw-launcher {
+    line-height: 0;
+    .rcw-open-launcher, .rcw-close-launcher {
+        margin: 0;
+    }
+}
+
+.rcw-conversation-container .rcw-header, .rcw-new-message, .rcw-message-text p {
+    font-family: sans-serif;
+}
