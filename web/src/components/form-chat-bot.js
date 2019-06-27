@@ -1,51 +1,92 @@
 import React from 'react'
 import { Launcher } from 'react-chat-window'
+import io from 'socket.io-client'
 import config from '../../config.json'
 import './form-chat-bot.scss'
-import io from 'socket.io-client'
-//TODO: set up socket jwt with connect, disconnect on the server
-const socket = io('https://marmt-gcp.appspot.com')
+import checkWorkingHours from '../utils/checkWorkingHours'
+import handleFetch from '../utils/fetch'
+
+const socketUrl = 'https://marmt-gcp.appspot.com'
+let socket
 
 class FormChatBot extends React.Component {
     constructor(props) {
         super(props)
         this.messageInput = React.createRef();
 
-        socket.on('sms message', (sms) => this.handleAddResponseMessage(sms.toString()));
-
         this.state = {
             normalHours: true,
-            messageList: []
+            messageList: [],
+            isOpen: false,
+            userName: ''
         }
     }
 
-    checkWorkingHours = () => {
-        // Check what day of the week and time it is
-        const now = new Date(),
-            day = now.getDay(),
-            hours = now.getHours();
+    handleClick = () => {
+        this.setState({
+            isOpen: !this.state.isOpen,
+        })
 
-        //Check if day is Mon-Fri
-        if (0 < day && day <= 5) {
-            //check between 9am and 5pm
-            if (9 <= hours && hours <= 17) {
-                return true
-            } else {
-                return false
-            }
-        } else {
-            return false
+        if (!socket || socket.disconnected) {
+            this.handleSocketConnect()
+        } else if (socket.connected) {
+            this.handleSocketDisconnect()
         }
     }
 
-    handleNewUserMessage = (newMessage) => {
+    handleSocketConnect = () => {
+
+        socket = io(socketUrl, {
+            autoConnect: false,
+        })
+
+        socket.on('connect', () => {
+            console.log('Client has connected to the server!')
+        });
+
+        socket.on('sms message', (sms) => this.handleUserResponseMessage(sms.toString()))
+        socket.on('added to que', this.handleAddedToQue)
+        socket.on('now messaging', this.handleRemoveFromQue)
+
+        socket.open()
+        socket.emit('add to stack')
+    }
+
+    handleSocketDisconnect = () => {
+        console.log('Socket disconnected');
+        socket.disconnect();
+    }
+
+    handleAddedToQue = () => {
+        this.handleUserResponseMessage(`Sorry ${this.state.userName}, Ted is chatting with another person, but wait, you're in que.`)
+    }
+
+    handleRemoveFromQue = () => {
+        // Send message to Ted with next person on the chat
+        handleFetch(`${socketUrl}/chat`, 'POST', {
+            query: {
+                connection: socket.id,
+                fromNumber: '+18312469107',
+                toNumber: '+14084022790',
+                twilioAccountSid: config.twilioAccountSid,
+                twilioAuthToken: config.twilioAuthToken,
+            },
+            message: `Hi Ted, you're now in a chat with ${this.state.userName}`
+        })
+        .then(() => {
+            this.handleUserResponseMessage(`Thanks for waiting, how can I help you!?`)
+        })
+    }
+
+    handleUserMessage = (newMessage) => {
 
         this.setState({
-            messageList: [...this.state.messageList, newMessage]
+            messageList: [...this.state.messageList, newMessage],
+            userName: newMessage.data.text
         })
 
         // check if normal business hours
-        const normalBizHours = this.checkWorkingHours()
+        const normalBizHours = checkWorkingHours()
         if (normalBizHours) {
             console.log('true')
         }
@@ -57,27 +98,21 @@ class FormChatBot extends React.Component {
             this.setState({ normalHours: false })
         }
         
-        fetch('https://marmt-gcp.appspot.com/chat', {
-            method: 'POST',
-            body: JSON.stringify(
-                {
-                    query: {
-                        fromNumber: '+18312469107',
-                        toNumber: '+14084022790',
-                        twilioAccountSid: config.twilioAccountSid,
-                        twilioAuthToken: config.twilioAuthToken
-                    },
-                    message: newMessage.data.text
-                }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
+        // Post message to Ted
+        handleFetch(`${socketUrl}/chat`, 'POST', {
+            query: {
+                connection: socket.id,
+                fromNumber: '+18312469107',
+                toNumber: '+14084022790',
+                twilioAccountSid: config.twilioAccountSid,
+                twilioAuthToken: config.twilioAuthToken,
+            },
+            message: newMessage.data.text
         })
-        .catch(error => console.error(error));
-        
+       // .then()
     }
 
-    handleAddResponseMessage = (text) => {
+    handleUserResponseMessage = (text) => {
         if (text.length > 0) {
             this.setState({
                 messageList: [...this.state.messageList, {
@@ -89,18 +124,25 @@ class FormChatBot extends React.Component {
         }
     }
 
+    componentWillMount() {
+        this.handleUserResponseMessage('Can I please have your name?')
+    }
+
     render() {
+        const isOpen = this.props.hasOwnProperty('isOpen') ? this.props.isOpen : this.state.isOpen;
         return (
 
             <div className="App">
                 <Launcher
                     agentProfile={{
-                        teamName: 'react-chat-window',
-                        imageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png'
+                        teamName: 'Hi, this is Ted, the owner!',
+                        imageUrl: 'https://media.licdn.com/dms/image/C5603AQFVGuceJJYdOA/profile-displayphoto-shrink_200_200/0?e=1567036800&v=beta&t=VW_CKlWbaOxp0k48QACNgN8nZIMVYIsecmuw10T7NWA'
                     }}
-                    onMessageWasSent={this.handleNewUserMessage}
+                    handleClick={this.handleClick}
+                    onMessageWasSent={this.handleUserMessage}
                     messageList={this.state.messageList}
-                    showEmoji
+                    isOpen={isOpen}
+                    showEmoji={false}
                 />
             </div>
 
