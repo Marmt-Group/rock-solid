@@ -6,7 +6,7 @@ import './form-chat-bot.scss'
 import checkWorkingHours from '../utils/checkWorkingHours'
 import handleFetch from '../utils/fetch'
 
-const socketUrl = 'https://marmt-gcp.appspot.com'
+const socketUrl = 'https://bagged-goose-89973.herokuapp.com'
 let socket
 
 class FormChatBot extends React.Component {
@@ -41,7 +41,7 @@ class FormChatBot extends React.Component {
         })
 
         socket.on('connect', () => {
-            console.log('Client has connected to the server!')
+            // console.log('Client has connected to the server!')
         });
 
         socket.on('sms message', (sms) => this.handleUserResponseMessage(sms.toString()))
@@ -53,7 +53,7 @@ class FormChatBot extends React.Component {
     }
 
     handleSocketDisconnect = () => {
-        console.log('Socket disconnected');
+        // console.log('Socket disconnected');
         socket.disconnect();
     }
 
@@ -87,14 +87,10 @@ class FormChatBot extends React.Component {
 
         // check if normal business hours
         const normalBizHours = checkWorkingHours()
-        if (normalBizHours) {
-            console.log('true')
-        }
 
         if (!normalBizHours && this.state.normalHours) {
-            console.log('false')
-            // addResponseMessage('Sorry, it\'s outside of our normal business hours, I might not be able to respond.')
-            // addResponseMessage('Just in case, please leave your name and phone number or email and and I\'ll contact you asap! Thanks.')
+            this.handleUserResponseMessage('Sorry, it\'s outside of our normal business hours, I might not be able to respond.')
+            this.handleUserResponseMessage('Just in case, please leave your name and phone number or email and and I\'ll contact you asap! Thanks.')
             this.setState({ normalHours: false })
         }
         

@@ -33,27 +33,6 @@ export default {
             title: 'description',
             name: 'Description',
             type: 'text'
-        },
-        {
-            name: 'beforeImage',
-            title: 'Before Image',
-            type: 'image',
-            options: {
-                hotspot: true
-            }
-        },
-        {
-            name: 'afterImage',
-            title: 'After Image',
-            type: 'image',
-            options: {
-                hotspot: true
-            }
-        },
-        {
-            title: "Project Video",
-            name: "video",
-            type: "mux.video"
         }
     ]
 }
