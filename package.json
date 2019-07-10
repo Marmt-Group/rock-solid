@@ -9,6 +9,7 @@
         "format": "lerna run format",
         "graphql-deploy": "lerna run graphql-deploy",
         "now-deploy": "now --target production",
+        "sanity-deploy": "lerna run sanity-deploy",
         "start": "lerna run empty-cache && lerna run graphql-deploy && lerna run start --parallel",
         "postinstall": "lerna bootstrap"
     },

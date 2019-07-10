@@ -6,12 +6,14 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // We import object and document schemas
 import author from './author'
 import blockContent from './blockContent'
-import cta from './cta'
 import category from './category'
-import company from './company'
+import companyInfo from './companyInfo'
+import cta from './cta'
 import faq from './faq'
 import project from './project'
+import siteSettings from './siteSettings'
 import testimonials from './testimonials'
+import video from './video'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -24,11 +26,13 @@ export default createSchema({
     // in the studio.
     author,
     blockContent,
-    company,
+    companyInfo,
     cta,
     category,
     faq,
     project,
-    testimonials
+    siteSettings,
+    testimonials,
+    video
   ])
 })
