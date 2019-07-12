@@ -73,3 +73,4 @@ yarn-error.log
 NOTES.md
 *.code-workspace
 config.json
+/lerna-debug.log

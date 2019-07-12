@@ -1,11 +1,11 @@
 {
   "root": true,
   "api": {
-    "projectId": "g4z72sbo",
+    "projectId": "rqda9aqo",
     "dataset": "production"
   },
   "project": {
-    "name": "rock-solid",
+    "name": "rock-solid-inc-studio",
     "basePath": "/"
   },
   "plugins": [

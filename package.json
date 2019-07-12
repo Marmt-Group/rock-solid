@@ -5,7 +5,7 @@
     "scripts": {
         "clean": "lerna clean",
         "empty-cache": "lerna run empty-cache",
-        "init": "cd cms && sanity init && lerna run graphql-deploy",
+        "init": "cd studio && sanity init && lerna run graphql-deploy",
         "format": "lerna run format",
         "graphql-deploy": "lerna run graphql-deploy",
         "now-deploy": "now --target production",
