@@ -16,5 +16,12 @@
     "devDependencies": {
         "lerna": "^3.14.1",
         "rimraf": "^2.6.3"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Marmt-Group/client-rock-solid.git"
+    },
+    "bugs": {
+        "url": "https://github.com/gatsbyjs/gatsby/issues"
     }
 }
