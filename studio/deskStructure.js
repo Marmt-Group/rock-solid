@@ -2,7 +2,7 @@ import S from '@sanity/desk-tool/structure-builder'
 import { MdBusiness, MdSettings } from 'react-icons/md'
 import { FaFile } from 'react-icons/fa'
 
-const hiddenTypes = ['author', 'category', 'companyInfo', 'cta', 'faq', 'page', 'project', 'siteSettings', 'video', 'testimonials']
+const hiddenTypes = ['author', 'beforeAfter', 'category', 'companyInfo', 'cta', 'faq', 'page', 'project', 'siteSettings', 'video', 'testimonials']
 
 export default () =>
     S.list()
@@ -39,6 +39,10 @@ export default () =>
                 .schemaType('project')
                 .child(S.documentTypeList('project')),
             S.listItem()
+                .title('Projects Before & After')
+                .schemaType('beforeAfter')
+                .child(S.documentTypeList('beforeAfter').title('Project')),
+            S.listItem()
                 .title('Call to Actions')
                 .schemaType('cta')
                 .child(S.documentTypeList('cta').title('CTAs')),
@@ -54,31 +58,5 @@ export default () =>
                 .title('Videos')
                 .schemaType('video')
                 .child(S.documentTypeList('video').title('Video')),
-            S.listItem()
-                .title('Pages')
-                .child(
-                    S.list()
-                        .title('Pages')
-                        .items([
-                            S.listItem()
-                                .title('About')
-                                .child(
-                                    S.editor()
-                                        .id('aboutPage')
-                                        .schemaType('page')
-                                        .documentId('about')
-                                )
-                                .icon(FaFile),
-                            S.listItem()
-                                .title('Contact')
-                                .child(
-                                    S.editor()
-                                        .id('contactPage')
-                                        .schemaType('page')
-                                        .documentId('contact')
-                                )
-                                .icon(FaFile)
-                        ])
-                ),
             ...S.documentTypeListItems().filter(listItem => !hiddenTypes.includes(listItem.getId()))
         ])

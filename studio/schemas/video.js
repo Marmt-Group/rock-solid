@@ -9,10 +9,9 @@ export default {
             type: "mux.video"
         },
         {
-            name: 'type',
-            title: 'Project Type',
-            type: 'reference',
-            to: { type: 'category' }
+            name: 'title',
+            title: 'Title',
+            type: 'string'
         }
     ]
 }
