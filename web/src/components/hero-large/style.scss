@@ -1,0 +1,30 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/animations.scss';
+
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 450px;
+    @include height-100;
+
+    .container, .row {
+        height: 100%;
+    }
+
+    .row {
+        align-items: center;
+    }
+
+    h1 {
+        font-weight: 700; text-transform: uppercase;
+        padding-bottom: 1em;
+        @include hide-for-slide-up;
+        animation: reveal-slide-up 1.5s $cubic-ease 2s 1 normal forwards;
+
+    }
+    p {
+        font-size: 1.7em;
+        @include hide-for-slide-up;
+        animation: reveal-slide-up 1.5s $cubic-ease 2.5s 1 normal forwards;
+    }
+}

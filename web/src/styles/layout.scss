@@ -1,0 +1,30 @@
+@import './stack-interface.css';
+@import './socicon.css';
+@import './iconsmind.css';
+@import './mixins.scss';
+@import './hamburger.css';
+@import '../styles/media-queries.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+
+body {
+    overflow-x: hidden;
+}
+
+.row {
+    width: 100%;
+    @media ($media-max-large) {
+        margin: 0;
+    }
+}
+
+section {
+    padding: 5.57142857em 0;
+}
+
+@media ($media-min-medium) {
+    section {
+        padding: 7.42857143em 0;
+    }
+}
+
+@import './custom.scss';

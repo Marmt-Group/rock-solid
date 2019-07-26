@@ -1,0 +1,45 @@
+@import '../../styles/media-queries.scss';
+
+.footer-cta {
+    padding: 0;
+
+    .container {
+        height: inherit;
+    }
+    .row {
+        height: inherit;
+        margin: 0;
+    }
+    .cta {
+        text-align: center;
+        width: 100%;
+
+        @media ($media-min-large) {
+            display: flex;
+            align-items: center;
+
+            div[class^="col"] {
+                &:first-child {
+                    text-align: left;
+                }
+                &:last-child {
+                    text-align: right;
+                }
+            }
+        }
+
+        h4 {
+            font-size: 1.5rem;
+            color: #808080;
+            margin: 20px;
+
+            @media ($media-min-large) {
+                font-size: 2em;
+            }
+        }
+
+        // @media ($media-min-medium) {
+        //     flex-direction: row;
+        // }
+    }
+}

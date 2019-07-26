@@ -1,0 +1,117 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/media-queries.scss';
+@import '../../styles/colors.scss';
+
+.navbar {
+
+    .row {
+        align-items: center;
+    }
+
+    &.rci {
+        background-color: #fff;
+        border-bottom: 1px solid rgba(0,0,0,.1);
+        box-sizing: border-box;
+        margin: 0;
+        position: fixed;
+        padding: 1.5rem 0;
+        top: 0;
+        transition-delay: 0s;
+        transition-duration: .2s;
+        transition-property: top;
+        transition-timing-function: cubic-bezier(.04,0,.18,.99);
+        width: 100%;
+        z-index: 10;
+        @include pad-mobile-outer;
+
+        @media ($media-min-large) {
+            padding: 2rem 0;
+        }
+    }
+    
+    &__logo_container {
+        position: relative;
+
+         @media ($media-min-large) {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+         }
+
+        .logo {
+            max-height: 2.857143em;
+            max-width: none;
+        }
+    }
+
+    &__menu_links {
+        display: none;
+        margin: 0;
+        min-height: 1px;
+        padding: 0 15px;
+        position: relative;
+
+        @media ($media-min-large) {
+            display: inline !important;
+        }
+
+        &-menu-horizontal {
+            display: flex;
+            list-style: none;
+            position: relative;
+            top: 6px;
+
+            li {
+                a {
+                    font-weight: 500;
+                    color: $primary-header-color;
+                    transition: 0.3s ease;
+                }
+
+                &:hover {
+                    > a {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            li:not(:last-child) {
+               margin-right: 3%;
+            }
+
+            > li:not(:hover) > a {
+                opacity: .5;
+            }
+        }
+
+
+    }
+
+    &__menu_contact {
+        display: none;
+        margin: 0;
+        min-height: 1px;
+        padding: 0 15px;
+        position: relative;
+        text-align: right;
+        width: 41.6667%;
+
+        @media ($media-min-large) {
+            display: inline !important;
+        }
+    }
+
+    &__hamburger {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+
+        .hamburger {
+            outline: none;
+        }
+
+        @media ($media-min-large) {
+            display: none;
+        }
+    }
+}

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { buildImageObj } from '../../lib/helpers'
 import { imageUrlFor } from '../../lib/image-url'
 
-import styles from './slideshow.module.css'
+import styles from './slideshow.module.scss'
 
 function Slideshow (props) {
   if (!props.slides) return null

@@ -1,0 +1,25 @@
+@import '../styles/media-queries.scss';
+
+[data-reach-dialog-content] {
+    position: relative;
+    width: 100vw !important;
+    margin: 18vh auto !important;
+    padding: 1rem;
+    border-radius: 3px;
+
+    @media ($media-min-larger) {
+        width: 50vw !important;
+    }
+}
+
+.closeButton {
+    position: absolute;
+    right: -70px;
+    top: 0;
+
+    .icon {
+        font-size: 3rem;
+        color: white;
+        cursor: pointer;
+    }
+}

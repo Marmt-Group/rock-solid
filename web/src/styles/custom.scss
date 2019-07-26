@@ -1,0 +1,78 @@
+
+@import './colors.scss';
+
+h1, h2, h3, h4, h5, h6 {
+    color: $primary-header-color;
+    font-weight: 300;
+    font-variant-ligatures: common-ligatures;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 3.14285714em;
+    line-height: 1.31818182em;
+    padding-bottom: 1.5em;
+}
+
+h2 {
+    font-size: 2.35714286em;
+    line-height: 1.36363636em;
+    margin-bottom: 0.78787878787879em;
+}
+
+h5 {
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 1.85714286em;
+}
+
+.lead, p {
+    color: $primary-font-color;
+}
+
+.btn:not([class*='primary']) {
+    border-color: #d3d3d3;
+}
+
+.imagebg:not(.image--light) h1, .imagebg:not(.image--light) h2, .imagebg:not(.image--light) h3, .imagebg:not(.image--light) h4, .imagebg:not(.image--light) h5, .imagebg:not(.image--light) h6, .imagebg:not(.image--light) p, .imagebg:not(.image--light) ul, .imagebg:not(.image--light) blockquote {
+    color: $white;
+}
+
+.boxed {
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    padding: 1.85714286em;
+    margin-bottom: 30px;
+
+    &.boxed--lg {
+        padding: 2.78571429em;
+    }
+
+    &.boxed--border {
+        border: 1px solid #ececec;
+    }
+}
+
+.box-shadow {
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.04);
+}
+
+.btn {
+    transition: 0.1s linear;
+    letter-spacing: .5px;
+    font-weight: 700;
+    font-size: 0.85714286em;
+    padding: 0.70952381em 1.85714286em;
+
+    &:hover {
+        transform: translate3d(0, -2px, 0);
+    }
+    &:not([class*='primary']){
+        color: #252525;
+        border-color: #d3d3d3;
+        &:hover {
+            border-color: #252525;
+        }
+    }
+}

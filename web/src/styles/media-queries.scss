@@ -1,0 +1,14 @@
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$lgr: 1024px;
+$xl: 1200px;
+
+$media-min-small: "min-width: #{$sm}";
+$media-min-medium: "min-width: #{$md}";
+$media-min-large: "min-width: #{$lg}";
+$media-min-larger: "min-width: #{$lgr}";
+$media-min-xlarge: "min-width: #{$xl}";
+
+$media-max-medium: "max-width: #{$md}";
+$media-max-large: "max-width: #{$lg}";

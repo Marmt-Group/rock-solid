@@ -2,7 +2,7 @@ import React from 'react'
 import { Launcher } from 'react-chat-window'
 import io from 'socket.io-client'
 import config from '../../config.json'
-//import './form-chat-bot.css'
+import './form-chat-bot.scss'
 import checkWorkingHours from '../utils/checkWorkingHours'
 import handleFetch from '../utils/fetch'
 
@@ -128,7 +128,7 @@ class FormChatBot extends React.Component {
         const isOpen = this.props.hasOwnProperty('isOpen') ? this.props.isOpen : this.state.isOpen;
         return (
 
-            <div className="App">
+            <div className="chatBot">
                 <Launcher
                     agentProfile={{
                         teamName: 'Hi, this is Ted, the owner!',

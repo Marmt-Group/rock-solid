@@ -1,0 +1,8 @@
+$cubic-ease: cubic-bezier(.04,0,.18,.99);
+
+@keyframes reveal-slide-up {
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,38 @@
+@import '../styles/media-queries.scss';
+@import '../styles/colors.scss';
+
+.sc-header--img {
+    width: 55px;
+    height: auto;
+    margin: 0;
+}
+
+.sc-open-icon, .sc-closed-icon {
+    margin: 0;
+}
+
+.sc-user-input--file-icon-wrapper {
+    display: none;
+}
+
+.sc-launcher, .sc-open-icon, .sc-closed-icon {
+    cursor: pointer;
+
+    @media ($media-min-medium) {
+        bottom: 40px !important;
+    }
+}
+
+.sc-launcher {
+    background-color: $primary-teal;
+}
+
+.sc-chat-window {
+    @media ($media-min-medium) {
+        bottom: 115px !important;
+    }
+}
+
+.sc-header {
+    background-color: $primary-teal;
+}

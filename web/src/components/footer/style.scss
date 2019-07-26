@@ -1,0 +1,9 @@
+@import '../../styles/media-queries.scss';
+
+footer {
+    padding: 2.85714286em 0;
+
+    @media ($media-min-medium) {
+        padding: 3.85714286em 0;
+    }
+}

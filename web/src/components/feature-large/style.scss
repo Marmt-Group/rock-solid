@@ -1,0 +1,43 @@
+@import '../../styles/media-queries.scss';
+
+.feature-large {
+
+    .feature{
+        margin-bottom: 1rem;
+        overflow: hidden;
+
+        i {
+            width: 25%;
+            float: left;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .icon:not(.block) {
+        display: inline-block;
+    }
+
+    .icon {
+        line-height: 1em;
+        font-size: 3.14285714em;
+    }
+
+    h5 {
+        margin-bottom: 0.46428571em;
+    }
+
+    .feature__body {
+        width: 75%;
+        float: right;
+    }
+
+    @media ($media-max-medium) {
+        div[class^="col-"]:last-child {
+            padding-top: 30px;
+        }
+    }
+}
+
