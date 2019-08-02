@@ -6,4 +6,11 @@ footer {
     @media ($media-min-medium) {
         padding: 3.85714286em 0;
     }
+
+    .fine-print {
+        font-size: 80%;
+        p {
+            margin: 0;
+        }
+    }
 }

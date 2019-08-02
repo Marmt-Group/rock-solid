@@ -1,11 +1,28 @@
 @import '../../styles/mixins.scss';
 @import '../../styles/media-queries.scss';
 @import '../../styles/colors.scss';
+@import '../../styles/animations.scss';
 
 .navbar {
 
     .row {
-        align-items: center;
+        flex-direction: column;
+
+        @media ($media-min-large) {
+            align-items: center;
+            flex-direction: row;
+        }
+
+        &.show {
+            .navbar__menu_links {
+                height: 100vh;
+                animation: fade-in-right .3s $cubic-ease .3s 1 forwards normal;
+
+                ul {
+                    overflow: visible;
+                }
+            }
+        }
     }
 
     &.rci {
@@ -45,21 +62,57 @@
     }
 
     &__menu_links {
-        display: none;
+        height: 0;
         margin: 0;
         min-height: 1px;
         padding: 0 15px;
         position: relative;
+        order: 2;
+        opacity: 0;
+        transform: translate(-30px, 0);
+
+        ul {
+            padding: 2em 0 0;
+            flex-direction: column;
+            overflow: hidden;
+
+            li {
+                font-size: 1.2rem;
+                margin-bottom: 1.75em;
+            }
+        }
+
+        @media ($media-min-large) {
+            transform: translate(0, 0);
+
+            ul {
+                padding: 0;
+                flex-direction: row;
+                overflow: visible;
+
+                li {
+                    font-size: 1rem;
+                    margin-bottom: 0;
+                }
+            }
+        }
 
         @media ($media-min-large) {
             display: inline !important;
+            order: 0;
+            opacity: 1 !important;
+            height: 0 !important;
         }
 
         &-menu-horizontal {
             display: flex;
+            height: 0;
             list-style: none;
             position: relative;
-            top: 6px;
+
+            @media ($media-min-large) {
+                padding-left: 0;
+            }
 
             li {
                 a {
@@ -82,6 +135,15 @@
             > li:not(:hover) > a {
                 opacity: .5;
             }
+
+            .contact-mobile {
+                color: $primary-font-color;
+                cursor: pointer;
+
+                @media ($media-min-large) {
+                    display: none;
+                }
+            }
         }
 
 
@@ -98,6 +160,13 @@
 
         @media ($media-min-large) {
             display: inline !important;
+        }
+
+        button {
+            outline: none;
+            &:focus {
+                box-shadow: none;
+            }
         }
     }
 

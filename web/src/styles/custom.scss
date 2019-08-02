@@ -20,6 +20,16 @@ h2 {
     margin-bottom: 0.78787878787879em;
 }
 
+h3 {
+    font-size: 1.75em;
+    line-height: 1.36363636em;
+}
+
+
+h4 {
+    font-weight: 400;
+}
+
 h5 {
     font-size: 1em;
     font-weight: 600;
@@ -28,6 +38,12 @@ h5 {
 
 .lead, p {
     color: $primary-font-color;
+    line-height: 1.75;
+    font-weight: 300;
+}
+
+p:last-child {
+    margin-bottom: 0;
 }
 
 .btn:not([class*='primary']) {

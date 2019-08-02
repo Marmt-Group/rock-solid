@@ -5,13 +5,13 @@ const FeatureLarge = () => (
     <section className="feature-large">
         <div className="container">
             <div className="row">
-                <div className="col-sm-12 col-md-5">
-                    <div className="switchable__text">
-                        <h2>What is coated concrete?</h2>
-                        <p className="lead"> We take your existing patios, walkways, pool decks and more, and coat over it with concrete. No tear out of needed! What you get from us is absolutely beautiful craftsmanship that's built to last. We've been in business since 1995 and employ a hard working team from around the San Francisco Bay area.</p>
+                <div className="col-sm-12 col-lg-4">
+                    <div className="text">
+                        <h2>Coated concrete?</h2>
+                        <p className="lead"> Yes, we take your existing patios, walkways, pool decks and more, and coat over it with concrete. No tear out of needed! What you get from us is absolutely beautiful craftsmanship that's built to last. We've been in business since 1995 and employ a hard working team from around the San Francisco Bay area.</p>
                     </div>
                 </div>
-                <div className="col-sm-12 col-md-7">
+                <div className="col-sm-12 col-lg-8">
                     <div className="boxed boxed--lg boxed--border">
                         <div className="feature feature-2"> <i className="icon  icon-Money-Smiley" icon-class=" icon-Money-Smiley" title="icon-Money-Smiley"></i>
                             <div className="feature__body">

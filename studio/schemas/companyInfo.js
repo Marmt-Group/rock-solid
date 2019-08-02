@@ -29,18 +29,33 @@ export default {
       type: 'string'
     },
     {
-      name: 'zipCode',
-      title: 'ZIP Code',
-      type: 'string'
-    },
-    {
       name: 'city',
       title: 'City',
       type: 'string'
     },
     {
+      name: 'zipCode',
+      title: 'ZIP Code',
+      type: 'string'
+    },
+    {
+      name: 'state',
+      title: 'State',
+      type: 'string'
+    },
+    {
       name: 'country',
       title: 'Country',
+      type: 'string'
+    },
+    {
+      name: 'localPhone',
+      title: 'Phone (local)',
+      type: 'string'
+    },
+    {
+      name: 'tollPhone',
+      title: 'Phone (toll free)',
       type: 'string'
     }
   ]

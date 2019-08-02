@@ -72,9 +72,6 @@ export default {
     // as a block type.
     {
       type: 'figure'
-    },
-    {
-      type: 'slideshow'
     }
   ]
 }

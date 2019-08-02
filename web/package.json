@@ -4,6 +4,17 @@
   "description": "Gatsby site for Rock Solid, Inc.",
   "version": "0.1.0",
   "author": "David Davis <davidjamesdavis.djd@gmail.com>",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "empty-cache": "gatsby clean",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "now-build": "npm run build",
+    "now-dev": "npm run build",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
   "dependencies": {
     "@reach/dialog": "^0.2.9",
     "@sanity/block-content-to-react": "^2.0.6",
@@ -23,6 +34,7 @@
     "gatsby-source-filesystem": "^2.0.37",
     "gatsby-source-sanity": "^4.0.1",
     "gatsby-transformer-sharp": "^2.1.20",
+    "google-map-react": "^1.1.4",
     "intersection-observer": "^0.7.0",
     "modern-normalize": "^0.5.0",
     "node-sass": "^4.12.0",
@@ -34,6 +46,8 @@
     "react-chat-window": "^1.2.1",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-image-lightbox": "^5.1.0",
+    "react-perfect-scrollbar": "^1.5.3",
     "sanity-mux-player": "^0.0.26",
     "socket.io-client": "^2.2.0"
   },
@@ -43,16 +57,5 @@
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "empty-cache": "gatsby clean",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "now-build": "npm run build",
-    "now-dev": "npm run build",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
-  }
+  "license": "MIT"
 }

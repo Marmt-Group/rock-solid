@@ -34,7 +34,7 @@
         float: right;
     }
 
-    @media ($media-max-medium) {
+    @media ($media-max-large) {
         div[class^="col-"]:last-child {
             padding-top: 30px;
         }

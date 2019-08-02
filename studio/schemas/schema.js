@@ -14,10 +14,8 @@ import cta from './cta'
 import faq from './faq'
 import figure from './figure'
 import mainImage from './mainImage'
-import page from './page'
 import project from './project'
 import siteSettings from './siteSettings'
-import slideshow from './slideshow'
 import testimonials from './testimonials'
 import video from './video'
 
@@ -40,10 +38,8 @@ export default createSchema({
     faq,
     figure,
     mainImage,
-    page,
     project,
     siteSettings,
-    slideshow,
     testimonials,
     video
   ])

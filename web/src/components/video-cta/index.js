@@ -26,7 +26,7 @@ const VideoCta = ({ videoCta, videoAsset }) => {
             <div className="container">
                 <div className="row">
                     <div className="col-sm-12">
-                        <Lightbox data={videoAsset} type={'video'} usrOptions={options} />
+                        <Lightbox data={videoAsset} type={'video-cta'} usrOptions={options} />
                     </div>
                     
                 </div>

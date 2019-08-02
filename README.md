@@ -7,11 +7,11 @@
 - GraphiQL explorer at http://localhost:8000/___graphql
 
 ## Deployment
-- Deploy a GraphQL API and schema to Sanity
-`npm run graphql-deploy`
+- Deploy a GraphQL API and schema to Sanity, do this whenever the schema changes
+`sanity upgrade && cd studio/ && npm run graphql-deploy`
 
-- Deploy the Sanity Studio to *.sanity.studio
+- Deploy the Sanity Studio to *.sanity.studio. This is where the CMS lives. 
 `npm run sanity-deploy`
 
-- Build & deploy to Zeit's Now
+- Build & deploy to Zeit's Now. It will source from Sanity, made possible by the sanity gatsby plugin.
 `npm run now-deploy`

@@ -1,10 +1,25 @@
 @import '../styles/media-queries.scss';
 
+.ril__toolbar {
+    background: transparent;
+}
+
+.ril__navButtons {
+    &:focus {
+        outline: none;
+    }
+    
+}
+
+[data-reach-dialog-overlay] {
+    background: rgba(0, 0, 0, 0.85);
+}
+
 [data-reach-dialog-content] {
     position: relative;
     width: 100vw !important;
     margin: 18vh auto !important;
-    padding: 1rem;
+    padding: 0;
     border-radius: 3px;
 
     @media ($media-min-larger) {

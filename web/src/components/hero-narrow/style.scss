@@ -1,0 +1,32 @@
+@import '../../styles/animations.scss';
+
+.hero.narrow {
+    height: 60vh;
+
+    .darken-bg {
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.5);;
+    }
+
+    .text-body {
+        margin-top: 120px;
+    }
+
+    h1 {
+        font-size: 2em;
+        font-weight: 300;
+        line-height: 1.36363636em;
+        text-transform: none;
+        padding: 0;
+        margin-bottom:  0.78787878787879em;
+        animation: reveal-slide-up 1.5s $cubic-ease 1.5s 1 normal forwards;
+    }
+
+    p {
+        font-size: 1.35714286em;
+        line-height: 1.68421053em;
+        font-weight: 400;
+        animation: reveal-slide-up 1.5s $cubic-ease 2s 1 normal forwards;
+    }
+}

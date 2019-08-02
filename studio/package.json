@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "David Davis <davidjamesdavis.djd@gmail.com>",
   "scripts": {
-    "graphql-deploy": "sanity graphql deploy --playground",
+    "graphql-deploy": "sanity graphql deploy",
     "start": "sanity start",
     "build": "sanity build",
     "deploy": "sanity deploy",

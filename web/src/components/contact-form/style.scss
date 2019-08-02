@@ -1,0 +1,141 @@
+@import '../../styles/animations.scss';
+@import '../../styles/colors.scss';
+@import '../../styles/media-queries.scss';
+
+.contact {
+    padding: 7.57142857em 0;
+
+    .row {
+        margin: 0;
+    }
+
+    align-items: center;
+    background: rgba(255,255,255,1);
+    bottom: 0;
+    display: flex;
+    position: fixed;
+    overflow: auto;
+    width: 100%;
+    top: 0;
+    transform: translate(0, 100vh);
+    z-index: 10;
+
+    &.reveal {
+        animation: moveUp .3s $cubic-ease 0s 1 normal forwards;
+    }
+
+    .lead {
+        line-height: 1.5;
+    }
+
+    .no-boxed {
+        margin: 0;
+    }
+
+    .icon-Close {
+        cursor: pointer;
+        font-size: 2.5rem;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        z-index: 10;
+    }
+
+    .text-container {
+        margin-top: 70px;
+
+        @media ($media-min-large) {
+            margin-top: 0;
+        }
+    }
+
+    form {
+        padding-top: 2em;
+        position: relative;
+        width: 100%;
+        label {
+            color: $primary-font-color;
+            font-size: .85714286em;
+        }
+
+        input, textarea {
+            width: 100%;
+        }
+    }
+
+    form > div[class*='col-']:not(:last-child),
+    form > .row > div[class*='col-']:not(:last-child) {
+        margin-bottom: 0.92857143em;
+    }
+
+    form .boxed:last-child {
+        margin: 0;
+    }
+
+    form.form--clearfix {
+        margin-left: -15px;
+    }
+
+    @media ($media-min-medium) {
+        div[class*='col-'] > form div[class*='col-']:last-child:nth-child(2) {
+            padding-right: 0;
+        }
+        div[class*='col-'] > form div[class*='col-']:first-child:nth-last-child(2) {
+            padding-left: 0;
+        }
+        form.form--horizontal > div[class*='col-'] {
+            margin: 0;
+        }
+    }
+
+    h2 + form,
+    .h2 + form {
+        margin-top: 2.78571429em;
+    }
+
+    h3 + form,
+    .h3 + form,
+    .lead + form {
+        margin-top: 2.78571429em;
+    }
+
+    .cover .lead + form {
+        margin-top: 3.71428571em;
+    }
+
+    form + span.type--fine-print {
+        margin-top: 1.08333333333334em;
+        display: inline-block;
+    }
+
+    .form--inline > span.h4 {
+        color: #666666;
+    }
+
+    .form--inline input,
+    .form--inline [class*='input-'] {
+        display: inline-block;
+        max-width: 200px;
+    }
+
+    .form--inline > span:not(:last-child),
+    .form--inline input:not(:last-child),
+    .form--inline [class*='input-']:not(:last-child) {
+        margin-right: 0.92857143em;
+    }
+
+    .form--inline button {
+        max-width: 200px;
+    }
+
+    .map-container {
+        display: none;
+        height: 300px;
+
+        @media ($media-min-large) {
+            display: inline;
+            height: 622px;
+        }
+        
+    }
+}

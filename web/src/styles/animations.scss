@@ -6,3 +6,25 @@ $cubic-ease: cubic-bezier(.04,0,.18,.99);
         opacity: 1;
     }
 }
+
+@keyframes fade-in-right {
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translate(0, 100vh);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}

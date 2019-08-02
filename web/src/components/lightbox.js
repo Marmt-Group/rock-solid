@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Img from 'gatsby-image'
-import VideoPlayer from './video-player'
-import { Dialog } from "@reach/dialog"
+import LightboxVideoCta from '../components/lightbox-video-cta'
+import LightboxGallery from '../components/lightbox-gallery'
 import "@reach/dialog/styles.css"
 import './lightbox.scss'
 
@@ -9,55 +9,33 @@ const Lightbox = ({ data, usrOptions, type }) => {
 
     const [showLightbox, setshowLightBox] = useState(false)
 
-    if (type === 'video') {
+    const handleShowLightbox = () => {
+        setshowLightBox(true)
+    }
 
-        const cta = usrOptions.cta || ''
+    const handleHideLightbox = () => {
+        setshowLightBox(false)
+    }
 
+    if (type === 'video-cta') {
         return (
-            <>
-            <div className="video-play-container" onClick={() => setshowLightBox(true)}>
-                <div className="video-play-icon video-play-icon--sm box-shadow"></div>
-                {cta && (
-                    <h2>{cta}</h2>
-                )}
-                    
-               
-            </div>
-
-            {showLightbox && (
-                <Dialog>
-                    <VideoPlayer data={data} options={usrOptions} />
-                    
-                    <div
-                        className="closeButton"
-                        onClick={() => setshowLightBox(false)}
-                    >
-                    <i class="icon  icon-Close-Window" icon-class=" icon-Close-Window" title="icon-Close-Window"></i>
-                    </div>
-                </Dialog>
-            )}
-            </>
+            <LightboxVideoCta video={data} options={usrOptions} showLightbox={showLightbox} onShowLightbox={handleShowLightbox} onHideLightbox={handleHideLightbox} />
+        )
+    } else if (type === 'gallery') {
+        return (
+            <LightboxGallery assets={data} defaults={{}} />
+        )
+    } else if (type === 'gallery-beforeAfter') {
+        return (
+            <LightboxGallery assets={data} defaults={{beforeAfter: true}} />
         )
     } else if (type === 'image') {
-        if (data.isArray()) {
-            return (
-                <div className="lightbox-container">
-                    {data.map(image => (
-                        <Img
-                            key={image.node.childImageSharp.fluid.src}
-                            fluid={image.node.childImageSharp.fluid}
-                        />
-                    ))}
-                </div>
-            )
-        } else {
-            return (
-                <div>
-                    <Img fluid={data.node.childImageSharp.fluid} />
-                </div>
-            )
-        }
-    }        
+        return (
+            <div>
+                <Img fluid={data.node.childImageSharp.fluid} />
+            </div>
+        )
+    }       
 }
 
 export default Lightbox
