@@ -28,6 +28,7 @@
 }
 
 .sc-chat-window {
+    z-index: 100;
     @media ($media-min-medium) {
         bottom: 115px !important;
     }

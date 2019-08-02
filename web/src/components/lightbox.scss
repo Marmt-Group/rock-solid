@@ -12,14 +12,14 @@
 }
 
 [data-reach-dialog-overlay] {
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.85) !important;
 }
 
 [data-reach-dialog-content] {
     position: relative;
     width: 100vw !important;
     margin: 18vh auto !important;
-    padding: 0;
+    padding: 0 !important; 
     border-radius: 3px;
 
     @media ($media-min-larger) {

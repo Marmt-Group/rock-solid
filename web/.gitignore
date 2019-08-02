@@ -72,5 +72,5 @@ yarn-error.log
 # Misc
 NOTES.md
 *.code-workspace
-config.json
+twilioConfig.json
 /lerna-debug.log

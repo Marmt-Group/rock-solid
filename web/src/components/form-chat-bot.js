@@ -1,7 +1,7 @@
 import React from 'react'
 import { Launcher } from 'react-chat-window'
 import io from 'socket.io-client'
-import config from '../../config.json'
+import config from '../../twilioConfig.json'
 import './form-chat-bot.scss'
 import checkWorkingHours from '../utils/checkWorkingHours'
 import handleFetch from '../utils/fetch'
