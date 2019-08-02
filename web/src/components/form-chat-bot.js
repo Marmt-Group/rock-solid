@@ -1,7 +1,6 @@
 import React from 'react'
 import { Launcher } from 'react-chat-window'
 import io from 'socket.io-client'
-import config from '../../twilioConfig.json'
 import './form-chat-bot.scss'
 import checkWorkingHours from '../utils/checkWorkingHours'
 import handleFetch from '../utils/fetch'
@@ -68,8 +67,8 @@ class FormChatBot extends React.Component {
                 connection: socket.id,
                 fromNumber: '+18312469107',
                 toNumber: '+14084022790',
-                twilioAccountSid: config.twilioAccountSid,
-                twilioAuthToken: config.twilioAuthToken,
+                twilioAccountSid: process.env.GATSBY_TWILIO_ACCOUNT_SID,
+                twilioAuthToken: process.env.GATSBY_TWILIO_AUTH_TOKEN,
             },
             message: `Hi Ted, you're now in a chat with ${this.state.userName}`
         })
@@ -100,8 +99,8 @@ class FormChatBot extends React.Component {
                 connection: socket.id,
                 fromNumber: '+18312469107',
                 toNumber: '+14084022790',
-                twilioAccountSid: config.twilioAccountSid,
-                twilioAuthToken: config.twilioAuthToken,
+                twilioAccountSid: process.env.GATSBY_TWILIO_ACCOUNT_SID,
+                twilioAuthToken: process.env.GATSBY_TWILIO_AUTH_TOKEN,
             },
             message: newMessage.data.text
         })
