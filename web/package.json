@@ -9,8 +9,6 @@
     "develop": "gatsby develop",
     "empty-cache": "gatsby clean",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "now-build": "npm run build",
-    "now-dev": "npm run build",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""

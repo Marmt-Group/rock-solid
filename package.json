@@ -7,7 +7,6 @@
         "empty-cache": "lerna run empty-cache",
         "init": "cd studio && sanity init && lerna run graphql-deploy",
         "format": "lerna run format",
-        "now-deploy": "now --target production",
         "sanity-deploy": "lerna run sanity-deploy",
         "start": "lerna run empty-cache && lerna run start --parallel",
         "postinstall": "lerna bootstrap"

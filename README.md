@@ -13,5 +13,5 @@
 - Deploy the Sanity Studio to *.sanity.studio. This is where the CMS lives. 
 `npm run sanity-deploy`
 
-- Build & deploy to Zeit's Now. It will source from Sanity, made possible by the sanity gatsby plugin.
-`npm run now-deploy`
+- Build & deploy to Netlify. It will source from Sanity, made possible by the sanity gatsby plugin.
+`git push origin master`
