@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import GoogleMapReact from 'google-map-react';
 import './style.scss';
 
+const MarkerComponent = ({ text }) => <div className="marker">{text}</div>
+
 const ContactForm = ({ showContact, onHideContact }) => {
 
     const [nameInput, setNameInput] = useState('')
@@ -66,11 +68,11 @@ const ContactForm = ({ showContact, onHideContact }) => {
                                 defaultCenter={mapDefaults.center}
                                 defaultZoom={mapDefaults.zoom}
                             >
-                                {/* <AnyReactComponent
-                                    lat={59.955413}
-                                    lng={30.337844}
-                                    text="My Marker"
-                                /> */}
+                                <MarkerComponent
+                                    lat={37.7105368}
+                                    lng={-121.9124054}
+                                    text="Rock Solid, Inc."
+                                />
                             </GoogleMapReact>
                         </div>
                     </div>
