@@ -32,12 +32,16 @@ const ContactForm = ({ showContact, onHideContact }) => {
         formData.append('company', companyInput)
         formData.append('message', messageInput)
 
-        let response = await fetch(`https://us-central1-rock-solid-242619.cloudfunctions.net/sendMailgunEmail?mg_key=${process.env.GATSBY_MAILGUN_KEY}`, {
+        let object = {};
+        formData.forEach((value, key) => { object[key] = value });
+        const json = JSON.stringify(object);
+
+        let response = await fetch('https://qlts6whf7f.execute-api.us-east-2.amazonaws.com/default/rockSolidSendMailgunEmail', {
             method: 'POST', 
-            body: formData, 
+            body: json, 
             headers: {
                 'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
-                'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                'Content-Type': 'application/json'
             }})
 
         if (response.ok) {
