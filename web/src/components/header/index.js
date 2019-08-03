@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import logo from '../../images/RSI-Logo.png'
-import { useStaticQuery, graphql } from 'gatsby'
-// import { cn } from '../../lib/helpers'
 import './style.scss'
 
 const Header = ({ siteTitle, showContact, onShowContact }) => {
