@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+import logo from '../../images/RSI-Logo.png'
 import { useStaticQuery, graphql } from 'gatsby'
 // import { cn } from '../../lib/helpers'
 import './style.scss'
@@ -9,18 +9,6 @@ const Header = ({ siteTitle, showContact, onShowContact }) => {
 
     const [active, setActive] = useState(false)
     const [showNav, setShowNav] = useState(false)
-
-    const data = useStaticQuery(graphql`
-        query HeaderQuery {
-            logo: file(relativePath: { eq: "RSI-Logo.png" }) {
-                childImageSharp {
-                    fixed(width: 192, height: 46) {
-                    ...GatsbyImageSharpFixed
-                    }
-                }
-            }
-        }
-    `)
 
     const handleToggle = () => {
         setShowNav(!showNav)
@@ -53,7 +41,7 @@ const Header = ({ siteTitle, showContact, onShowContact }) => {
                             </ul>
                         </div>
                         <div className="navbar__logo_container">
-                            <Link to='/'><Img className="logo logo-dark" fixed={data.logo.childImageSharp.fixed} alt={`${siteTitle} logo`} /></Link>
+                            <Link to='/'><img className="logo logo-dark" src={logo} alt={`${siteTitle} logo`} /></Link>
                         </div>
                         <div className="navbar__menu_contact col-md-6">
                             <button className="btn btn--sm type--uppercase contact-us" onClick={!showContact ? onShowContact : null}> <span className="btn__text">Contact Us</span> </button>
