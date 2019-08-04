@@ -25,6 +25,19 @@ const ContactForm = ({ showContact, onHideContact }) => {
         setMessageInput('')
     }
 
+    const postData = (url = '', data = {}) => {
+        return fetch(url, {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: data, // body data type must match "Content-Type" header
+        })
+            .then(response => response.json()); // parses JSON response into native JavaScript objects 
+    }
+
     const handleSubmit = async (event) => {
         event.preventDefault()
         const formData = new FormData();
@@ -38,22 +51,12 @@ const ContactForm = ({ showContact, onHideContact }) => {
         // let data = {};
         // formData.forEach((value, key) => { data[key] = value });
 
-        let response = await fetch(`https://us-central1-rock-solid-242619.cloudfunctions.net/sendMailgunEmail?mg_key=${process.env.GATSBY_MAILGUN_KEY}`, {
-            method: 'POST', 
-            body: formData, 
-            mode: 'cors',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            }})
-
-        if (response.ok) {
-            let text = await response.text();
-            alert(text)
-            resetForm()
-        } else {
-            alert("HTTP-Error: " + response.status);
-            resetForm()
-        }
+        postData(`https://us-central1-rock-solid-242619.cloudfunctions.net/sendMailgunEmail?mg_key=${process.env.GATSBY_MAILGUN_KEY}`, formData)
+            .then(data => {
+                console.log(JSON.stringify(data))
+                resetForm()
+            }) 
+            .catch(error => console.error(error));
     }
 
     return (
