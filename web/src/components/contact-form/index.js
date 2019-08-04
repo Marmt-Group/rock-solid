@@ -43,7 +43,6 @@ const ContactForm = ({ showContact, onHideContact }) => {
             body: formData, 
             mode: 'cors',
             headers: {
-                'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
                 'Content-Type': 'application/x-www-form-urlencoded'
             }})
 
