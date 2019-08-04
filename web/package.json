@@ -7,7 +7,7 @@
   "scripts": {
     "build": "yarn build:client && yarn build:microservices",
     "build:client": "gatsby build",
-    "build:microservices": "netlify-lambda build ./microservices",
+    "build:microservices": "netlify-lambda build /microservices",
     "develop": "gatsby develop",
     "empty-cache": "gatsby clean",
     "format": "prettier --write src/**/*.{js,jsx}",
@@ -37,6 +37,7 @@
     "google-map-react": "^1.1.4",
     "intersection-observer": "^0.7.0",
     "modern-normalize": "^0.5.0",
+    "netlify-lambda": "^1.5.1",
     "node-sass": "^4.12.0",
     "postcss-import": "^12.0.1",
     "postcss-preset-env": "^6.6.0",
