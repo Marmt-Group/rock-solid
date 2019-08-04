@@ -34,17 +34,17 @@ const ContactForm = ({ showContact, onHideContact }) => {
         formData.append('company', companyInput)
         formData.append('message', messageInput)
 
-        let data = {};
-        formData.forEach((value, key) => { data[key] = value });
+        // convert to json
+        // let data = {};
+        // formData.forEach((value, key) => { data[key] = value });
 
-        let response = await fetch('https://qlts6whf7f.execute-api.us-east-2.amazonaws.com/default/rockSolidSendMailgunEmail', {
+        let response = await fetch(`https://us-central1-rock-solid-242619.cloudfunctions.net/sendMailgunEmail?mg_key=${process.env.GATSBY_MAILGUN_KEY}`, {
             method: 'POST', 
-            body: JSON.stringify(data), 
+            body: formData, 
             mode: 'cors',
-            credentials: 'include',
             headers: {
                 'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/x-www-form-urlencoded'
             }})
 
         if (response.ok) {
