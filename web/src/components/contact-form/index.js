@@ -51,7 +51,7 @@ const ContactForm = ({ showContact, onHideContact }) => {
         // let data = {};
         // formData.forEach((value, key) => { data[key] = value });
 
-        postData(`https://us-central1-rock-solid-242619.cloudfunctions.net/sendMailgunEmail?mg_key=${process.env.GATSBY_MAILGUN_KEY}`, formData)
+        postData(`https://us-central1-rock-solid-242619.cloudfunctions.net/sendMailgunEmail/send?mg_key=${process.env.GATSBY_MAILGUN_KEY}`, formData)
             .then(data => {
                 console.log(JSON.stringify(data))
                 resetForm()
