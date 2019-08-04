@@ -1,11 +1,15 @@
 # Dependency directories
-/node_modules
+**node_modules
 
 # Logs
 /lerna-debug.log
 
 # Dotenv environment variables file
 .env
+
+# Netlify
+.netlify
+/lambda
 
 # Misc
 NOTES.md

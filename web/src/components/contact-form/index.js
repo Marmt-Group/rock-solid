@@ -25,15 +25,15 @@ const ContactForm = ({ showContact, onHideContact }) => {
         setMessageInput('')
     }
 
-    const postData = (url = '', data = {}) => {
+    const postData = (url, data) => {
         return fetch(url, {
             method: 'POST',
             mode: 'cors',
             cache: 'no-cache',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Type': 'application/json',
             },
-            body: data, // body data type must match "Content-Type" header
+            body: data,
         })
             .then(response => response.json()); // parses JSON response into native JavaScript objects 
     }
@@ -48,10 +48,10 @@ const ContactForm = ({ showContact, onHideContact }) => {
         formData.append('message', messageInput)
 
         // convert to json
-        // let data = {};
-        // formData.forEach((value, key) => { data[key] = value });
+        let dataObj = {};
+        formData.forEach((value, key) => { dataObj[key] = value });
 
-        postData(`https://us-central1-rock-solid-242619.cloudfunctions.net/sendMailgunEmail/send?mg_key=${process.env.GATSBY_MAILGUN_KEY}`, formData)
+        postData(`https://sleepy-cori-91fdc1.netlify.com/.netlify/functions/sendMailgunEmail?mg_key=${process.env.GATSBY_MAILGUN_KEY}`, JSON.stringify(dataObj))
             .then(data => {
                 console.log(JSON.stringify(data))
                 resetForm()
