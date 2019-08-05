@@ -5,9 +5,8 @@
   "version": "0.1.0",
   "author": "David Davis <davidjamesdavis.djd@gmail.com>",
   "scripts": {
-    "build": "yarn build:client && yarn build:microservices",
+    "build": "yarn build:client",
     "build:client": "gatsby build",
-    "build:microservices": "cd ../microservices && yarn preinstall && cd ../web && netlify-lambda build ../microservices",
     "develop": "gatsby develop",
     "empty-cache": "gatsby clean",
     "format": "prettier --write src/**/*.{js,jsx}",

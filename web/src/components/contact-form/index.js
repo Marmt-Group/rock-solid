@@ -31,7 +31,7 @@ const ContactForm = ({ showContact, onHideContact }) => {
             mode: 'cors',
             cache: 'no-cache',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/x-www-form-urlencoded',
             },
             body: data,
         })
@@ -48,10 +48,10 @@ const ContactForm = ({ showContact, onHideContact }) => {
         formData.append('message', messageInput)
 
         // convert to json
-        let dataObj = {};
-        formData.forEach((value, key) => { dataObj[key] = value });
+        // let dataObj = {};
+        // formData.forEach((value, key) => { dataObj[key] = value });
 
-        postData(`https://sleepy-cori-91fdc1.netlify.com/.netlify/functions/sendMailgunEmail?mg_key=${process.env.GATSBY_MAILGUN_KEY}`, JSON.stringify(dataObj))
+        postData(`https://us-central1-rock-solid-242619.cloudfunctions.net/sendMailgunEmail?mg_key=${process.env.GATSBY_MAILGUN_KEY}`, formData)
             .then(data => {
                 console.log(JSON.stringify(data))
                 resetForm()
