@@ -4,9 +4,8 @@
   "description": "",
   "main": "sendMailgunEmail.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prebuild": "yarn install"
   },
-  "keywords": [],
   "author": "david-j-davis <davidjamesdavis.djd@gmail.com>",
   "license": "ISC",
   "dependencies": {
