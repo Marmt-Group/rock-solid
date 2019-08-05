@@ -4,7 +4,7 @@
   "description": "",
   "main": "sendMailgunEmail.js",
   "scripts": {
-    "prebuild": "yarn install"
+    "preinstall": "yarn install"
   },
   "author": "david-j-davis <davidjamesdavis.djd@gmail.com>",
   "license": "ISC",
