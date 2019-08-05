@@ -7,7 +7,7 @@
   "scripts": {
     "build": "yarn build:client && yarn build:microservices",
     "build:client": "gatsby build",
-    "build:microservices": "netlify-lambda build /microservices",
+    "build:microservices": "netlify-lambda build ../microservices",
     "develop": "gatsby develop",
     "empty-cache": "gatsby clean",
     "format": "prettier --write src/**/*.{js,jsx}",
