@@ -28,11 +28,6 @@ const ContactForm = ({ showContact, onHideContact }) => {
     const postData = (url, data) => {
         return fetch(url, {
             method: 'POST',
-            mode: 'cors',
-            cache: 'no-cache',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
             body: data,
         })
             .then(response => response.json()); // parses JSON response into native JavaScript objects 
