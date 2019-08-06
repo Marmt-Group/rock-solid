@@ -28,6 +28,10 @@ const ContactForm = ({ showContact, onHideContact }) => {
     const postData = (url, data) => {
         return fetch(url, {
             method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+            },
             body: data,
         })
             .then(response => response.json()); // parses JSON response into native JavaScript objects 
@@ -42,13 +46,13 @@ const ContactForm = ({ showContact, onHideContact }) => {
         formData.append('company', companyInput)
         formData.append('message', messageInput)
 
-        // convert to json
-        // let dataObj = {};
-        // formData.forEach((value, key) => { dataObj[key] = value });
+        //convert to json
+        let dataObj = {};
+        formData.forEach((value, key) => { dataObj[key] = value });
 
-        postData(`https://us-central1-rock-solid-242619.cloudfunctions.net/sendMailgunEmail?mg_key=${process.env.GATSBY_MAILGUN_KEY}`, formData)
+        postData(`https://us-central1-rock-solid-242619.cloudfunctions.net/sendMailgunEmail?mg_key=${process.env.GATSBY_MAILGUN_KEY}`, JSON.stringify(dataObj))
             .then(data => {
-                console.log(JSON.stringify(data))
+                console.log(data)
                 resetForm()
             }) 
             .catch(error => console.error(error));
