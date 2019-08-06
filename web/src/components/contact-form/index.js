@@ -48,14 +48,21 @@ const ContactForm = ({ showContact, onHideContact }) => {
 
         //convert to json
         let dataObj = {};
-        formData.forEach((value, key) => { dataObj[key] = value });
+        for (const [key, value] of formData.entries()) {
+            dataObj[key] = value;
+        }
 
-        postData(`https://us-central1-rock-solid-242619.cloudfunctions.net/sendMailgunEmail?mg_key=${process.env.GATSBY_MAILGUN_KEY}`, JSON.stringify(dataObj))
+        postData(`${process.env.GATSBY_FIREBASE_FUNCTION_URL}?mg_key=${process.env.GATSBY_MAILGUN_KEY}`, JSON.stringify(dataObj))
             .then(data => {
                 console.log(data)
+                // TODO, post message on screen
                 resetForm()
             }) 
-            .catch(error => console.error(error));
+            .catch(error => {
+                // TODO, post we're sorry message
+                console.error(error)
+                resetForm()
+            })
     }
 
     return (
