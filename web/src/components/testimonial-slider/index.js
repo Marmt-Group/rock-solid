@@ -1,42 +1,43 @@
 import React from 'react'
+import Slider from "react-slick";
 import './style.scss'
-if (typeof window !== 'undefined') {
-import Flickity from 'react-flickity-component'
-}
 
 const TestimonialSlider = ({ testimonials }) => {
+    const settings = {
+        autoplay: true,
+        autoplaySpeed: 5000,
+        fade: true,
+        dots: true,
+        infinite: true,
+        speed: 1000,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    }
 
-    if (typeof window !== 'undefined') {
-        return (
-            <section className="testimonials-slider text-center">
-                <div className="container">
-                    <div className="row justify-content-sm-center">
-                        <div className="col-sm-10">
-                            <div className="slider" data-paging="true">
-                                <div className="slides">
-                                    
-                                    <Flickity
-                                        elementType={'div'} // default 'div'
-                                        options={{}} // takes flickity options {}
-                                    >
+    return (
+        <section className="testimonials-slider text-center">
+            <div className="container">
+                <div className="row justify-content-sm-center">
+                    <div className="col-sm-10">
+                        <div className="slider" data-paging="true">
+                            <div className="slides">
+                                <Slider {...settings}>
                                     {testimonials.nodes && testimonials.nodes.map((testimonial, index) => (
-                                    <div className="slide" key={index}>
-                                        <div className="testimonial">
-                                            <blockquote>“{testimonial.quote}”</blockquote>
-                                            <h5>{testimonial.person}</h5>
+                                        <div className="slide" key={index}>
+                                            <div className="testimonial">
+                                                <blockquote>“{testimonial.quote}”</blockquote>
+                                                <h5>{testimonial.person}</h5>
+                                            </div>
                                         </div>
-                                    </div>
                                     ))}
-                                    </Flickity>
-                                    
-                                </div>
+                                </Slider>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        )
-    }
+            </div>
+        </section>
+    )
 }
 
 export default TestimonialSlider
