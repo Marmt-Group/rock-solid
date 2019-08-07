@@ -15,6 +15,3 @@
 
 - Build & deploy to Netlify. It will source from Sanity, made possible by the sanity gatsby plugin.
 `git push origin master`
-
-- Deploy Netlify functions 
-`netlify deploy --functions=./microservices`

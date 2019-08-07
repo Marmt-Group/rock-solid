@@ -5,6 +5,7 @@ import SEO from '../components/seo'
 import Layout from '../components/layout'
 import HeroNarrow from '../components/hero-narrow'
 import ProjectPreviewGrid from '../components/project-preview-grid'
+import TestimonialSlider from '../components/testimonial-slider'
 
 export const query = graphql`
   query ProjectsPageQuery {
@@ -212,12 +213,20 @@ export const query = graphql`
       }
     }
 
+    testimonials: allSanityTestimonials {
+      nodes {
+        person
+        quote
+      }
+    }
+
   }
 `
 
 const ProjectsPage = props => {
   const { data, errors } = props
   const hero = (data || {}).hero
+  const testimonials = (data || {}).testimonials
   const projectNodes = {}
 
   projectNodes.vertical = (data || {}).projects_vertical
@@ -244,6 +253,7 @@ const ProjectsPage = props => {
             gallery={projectNodes}
           />
         )}
+      <TestimonialSlider testimonials={testimonials} />
     </Layout>
   )
 }

@@ -4,7 +4,7 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import './style.scss'
 
-function ProjectPreviewGrid({ gallery }) {
+const ProjectPreviewGrid = ({ gallery }) => {
 
     return (
         <section>

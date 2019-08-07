@@ -132,12 +132,14 @@
                margin-right: 3%;
             }
 
-            > li:not(:hover) > a {
-                opacity: .5;
+            @media ($media-min-large) {
+                > li:not(:hover) > a {
+                    opacity: .5;
+                }
             }
 
             .contact-mobile {
-                color: $primary-font-color;
+                color: #252525;
                 cursor: pointer;
 
                 @media ($media-min-large) {
