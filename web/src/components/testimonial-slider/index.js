@@ -1,8 +1,6 @@
 import React from 'react'
 import './style.scss'
-if (window !== 'undefined') {
-    import Flickity from 'react-flickity-component'
-}
+import Flickity from 'react-flickity-component'
 
 const TestimonialSlider = ({ testimonials }) => (
     <section className="testimonials-slider text-center">
