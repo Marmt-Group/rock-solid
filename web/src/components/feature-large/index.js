@@ -2,7 +2,7 @@ import React from "react"
 import './style.scss'
 
 const FeatureLarge = () => (
-    <section className="feature-large">
+    <section id="feature-large" className="feature-large">
         <div className="container">
             <div className="row">
                 <div className="col-sm-12 col-lg-4">

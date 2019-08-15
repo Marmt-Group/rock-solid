@@ -12,7 +12,7 @@
     }
 
     .row {
-        align-items: center;
+        align-items: flex-end;
     }
 
     h1 {
@@ -26,5 +26,14 @@
         font-size: 1.7em;
         @include hide-for-slide-up;
         animation: reveal-slide-up 1.5s $cubic-ease 2.5s 1 normal forwards;
+    }
+
+    .icon-Arrow-Down2 {
+        position: relative;
+        cursor: pointer;
+        color: white;
+        font-size: 36px;
+        font-weight: 700;
+        top: -50px;
     }
 }
