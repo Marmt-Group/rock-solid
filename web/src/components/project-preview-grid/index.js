@@ -15,7 +15,7 @@ const ProjectPreviewGrid = ({ gallery }) => {
                 </div>
                 <div className="row lightbox__categories-container">
                     
-                    <div className="col-sm-12 col-lg-7 images__container gallery">
+                    <div className="col-sm-12 images__container gallery">
                         <div className="lightbox__category">
                             <Lightbox data={gallery.pools} type={'gallery'} />
                             <p>Pool Decks</p>
@@ -36,14 +36,11 @@ const ProjectPreviewGrid = ({ gallery }) => {
                             <Lightbox data={gallery.commercial} type={'gallery'} />
                             <p>commercial</p>
                         </div>
-                    </div>
-
-                    <ul className="col-sm-12 col-lg-5 images__container">
-                        <li className="lightbox__category">
+                        <div className="lightbox__category">
                             <Lightbox data={gallery.beforeAfter} type={'gallery-beforeAfter'} />
                             <p>Before &amp; After</p>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                     
                 </div>
             </div>

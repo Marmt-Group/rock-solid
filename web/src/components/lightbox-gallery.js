@@ -22,7 +22,7 @@ const LightboxGallery = ({ assets, defaults }) => {
         }, [])
         galleryImgActive = <img
             src={imageUrlFor(buildImageObj(assets.nodes[0].beforeImage))
-                .width(380)
+                .width(340)
                 .height(Math.floor((9 / 16) * 600))
                 .url()}
             alt="project gallery"
@@ -32,7 +32,7 @@ const LightboxGallery = ({ assets, defaults }) => {
         images = assets.nodes.map(project => imageUrlFor(buildImageObj(project.mainImage)).maxWidth(1200).maxHeight(1200).url())
         galleryImgActive = <img
             src={imageUrlFor(buildImageObj(assets.nodes[0].mainImage))
-                .width(380)
+                .width(340)
                 .height(Math.floor((9 / 16) * 600))
                 .url()}
             alt="project gallery"
