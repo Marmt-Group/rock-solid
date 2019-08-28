@@ -6,7 +6,6 @@ import Layout from '../components/layout'
 import FormChatBot from '../components/form-chat-bot'
 import FeatureLarge from '../components/feature-large'
 import VideoCta from '../components/video-cta'
-import ImgLeftTextRight from '../components/img-left-text-right'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -48,14 +47,6 @@ export const query = graphql`
       }
     }
 
-    tedImg: file(relativePath: { eq: "ted.jpg" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 4160) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-
   }
 `
 
@@ -66,7 +57,6 @@ const IndexPage = props => {
   const hero = (data || {}).hero
   const videoImg = (data || {}).videoCtaImg
   const videoAsset = (data || {}).videoCtaUrl.edges[0].node.video.asset
-  const tedImg = (data || {}).tedImg
 
   return (
     <Layout>
@@ -74,7 +64,6 @@ const IndexPage = props => {
       <HeroLarge imgUrl={hero} />
       <FeatureLarge />
       <VideoCta videoCta={videoImg} videoAsset={videoAsset} />
-      <ImgLeftTextRight tedImg={tedImg} />
       <FormChatBot />
     </Layout>
   )

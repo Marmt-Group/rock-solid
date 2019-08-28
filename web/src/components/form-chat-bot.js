@@ -120,7 +120,7 @@ class FormChatBot extends React.Component {
     }
 
     componentWillMount() {
-        this.handleUserResponseMessage('Can I please have your name?')
+        this.handleUserResponseMessage('Hello, can I please have your name?')
     }
 
     render() {
@@ -130,8 +130,8 @@ class FormChatBot extends React.Component {
             <div className="chatBot">
                 <Launcher
                     agentProfile={{
-                        teamName: 'Hi, this is Ted, the owner!',
-                        imageUrl: 'https://media.licdn.com/dms/image/C5603AQFVGuceJJYdOA/profile-displayphoto-shrink_200_200/0?e=1567036800&v=beta&t=VW_CKlWbaOxp0k48QACNgN8nZIMVYIsecmuw10T7NWA'
+                        // teamName: 'Hi, this is Ted, the owner!',
+                        // imageUrl: 'https://media.licdn.com/dms/image/C5603AQFVGuceJJYdOA/profile-displayphoto-shrink_200_200/0?e=1567036800&v=beta&t=VW_CKlWbaOxp0k48QACNgN8nZIMVYIsecmuw10T7NWA'
                     }}
                     handleClick={this.handleClick}
                     onMessageWasSent={this.handleUserMessage}
