@@ -4,13 +4,11 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // We import object and document schemas
-import author from './author'
 import beforeAfter from './beforeAfter'
 import blockContent from './blockContent'
 import blockText from './blockText'
 import category from './category'
 import companyInfo from './companyInfo'
-import cta from './cta'
 import faq from './faq'
 import figure from './figure'
 import mainImage from './mainImage'
@@ -28,12 +26,10 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
-    author,
     beforeAfter,
     blockContent,
     blockText,
     companyInfo,
-    cta,
     category,
     faq,
     figure,

@@ -1,8 +1,7 @@
 import S from '@sanity/desk-tool/structure-builder'
 import { MdBusiness, MdSettings } from 'react-icons/md'
-import { FaFile } from 'react-icons/fa'
 
-const hiddenTypes = ['author', 'beforeAfter', 'category', 'companyInfo', 'cta', 'faq', 'project', 'siteSettings', 'video', 'testimonials']
+const hiddenTypes = ['beforeAfter', 'category', 'companyInfo', 'faq', 'project', 'siteSettings', 'video', 'testimonials']
 
 export default () =>
     S.list()
@@ -27,10 +26,6 @@ export default () =>
                 )
                 .icon(MdBusiness),
             S.listItem()
-                .title('People')
-                .schemaType('author')
-                .child(S.documentTypeList('author').title('People')),
-            S.listItem()
                 .title('Project Categories')
                 .schemaType('category')
                 .child(S.documentTypeList('category').title('Project Categories')),
@@ -42,10 +37,6 @@ export default () =>
                 .title('Projects Before & After')
                 .schemaType('beforeAfter')
                 .child(S.documentTypeList('beforeAfter').title('Project')),
-            S.listItem()
-                .title('Call to Actions')
-                .schemaType('cta')
-                .child(S.documentTypeList('cta').title('CTAs')),
             S.listItem()
                 .title('FAQs')
                 .schemaType('faq')
