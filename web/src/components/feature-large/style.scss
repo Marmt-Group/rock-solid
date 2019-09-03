@@ -1,4 +1,5 @@
 @import '../../styles/media-queries.scss';
+@import '../../styles/colors.scss';
 
 .feature-large {
 
@@ -23,6 +24,21 @@
     .icon {
         line-height: 1em;
         font-size: 3.14285714em;
+        &.green {
+            color: $primary-teal;
+        }
+        &.red {
+            color: $primary-red;
+        }
+        &.brown {
+            color: $primary-brown;
+        }
+        &.purple {
+            color: $primary-purple;
+        }
+        &.yellow {
+            color: $primary-yellow;
+        }
     }
 
     h5 {

@@ -8,7 +8,7 @@ import FormChatBot from '../components/form-chat-bot'
 
 export const query = graphql`
   query ServicesPageQuery {
-    hero: file(relativePath: { eq: "worker.jpg" }) {
+    hero: file(relativePath: { eq: "pool-deck.jpg" }) {
       childImageSharp {
         fluid(quality: 90, maxWidth: 4160) {
           ...GatsbyImageSharpFluid_withWebp
@@ -16,21 +16,14 @@ export const query = graphql`
       }
     }
 
-    videoCtaUrl: allSanityVideo(filter: {_id: {eq: "759fdb8e-f819-415c-9978-b99e81d80d3f"}}) {
-      edges {
-        node {
-          video {
-            asset {
-              assetId
-              playbackId
-              filename
-              thumbTime
-              status
-            }
-          }
+    imageAsset: file(relativePath: { eq: "pool-deck-2.jpg" }) {
+      childImageSharp {
+        fluid(quality: 90, maxWidth: 4160) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
+
   }
 `
 
@@ -38,14 +31,15 @@ const ServicesPage = props => {
 
   const { data } = props
   const hero = (data || {}).hero
-  const videoAsset = (data || {}).videoCtaUrl.edges[0].node.video.asset
+  //const videoAsset = (data || {}).videoCtaUrl.edges[0].node.video.asset
+  const imageAsset = (data || {}).imageAsset
   
 
   return (
     <Layout>
       <SEO title={'Services'} />
-      <HeroNarrow imgUrl={hero} header={'Rock Solid Inc specializes in beautiful limestone concrete coatings'} lead={'The installation process takes approximately 5 days to complete (depending on your project of course). We believe we\'ve got the corner on the market.'} />
-      <FeatureProcess videoAsset={videoAsset} />
+      <HeroNarrow imgUrl={hero} header={'Rock Solid Inc specializes in beautiful concrete coatings'} lead={'The installation process takes approximately 5 days to complete (depending on your project of course). We believe we\'ve got the corner on the market.'} />
+      <FeatureProcess imageAsset={imageAsset} />
       <FormChatBot />
     </Layout>
   )

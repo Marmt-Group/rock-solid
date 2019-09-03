@@ -10,7 +10,6 @@
     .darken-bg {
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,.5);;
     }
 
     .text-body {
@@ -24,6 +23,7 @@
         text-transform: none;
         padding: 0;
         margin-bottom:  0.78787878787879em;
+        text-shadow: 2px 2px 3px rgba(0,0,0,.3);
         animation: reveal-slide-up 1.5s $cubic-ease 1.5s 1 normal forwards;
     }
 
@@ -31,6 +31,7 @@
         font-size: 1.35714286em;
         line-height: 1.68421053em;
         font-weight: 400;
+        text-shadow: 2px 2px 3px rgba(0,0,0,.3);
         animation: reveal-slide-up 1.5s $cubic-ease 2s 1 normal forwards;
     }
 }

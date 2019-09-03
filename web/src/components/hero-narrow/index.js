@@ -3,7 +3,7 @@ import BackgroundImage from 'gatsby-background-image'
 import './style.scss'
 
 const HeroNarrow = ({ imgUrl, header, lead }) => (
-    <section className="hero narrow imagebg" data-overlay="5">
+    <section className="hero narrow imagebg">
         <BackgroundImage Tag="div"
             fluid={imgUrl.childImageSharp.fluid}
             backgroundColor={`#040e18`}

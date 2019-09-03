@@ -9,7 +9,7 @@ import TestimonialSlider from '../components/testimonial-slider'
 
 export const query = graphql`
   query ProjectsPageQuery {
-    hero: file(relativePath: { eq: "pool-deck.jpg" }) {
+    hero: file(relativePath: { eq: "pool-deck-3.jpeg" }) {
       childImageSharp {
         fluid(quality: 90, maxWidth: 4160) {
           ...GatsbyImageSharpFluid_withWebp
@@ -40,6 +40,7 @@ export const query = graphql`
           }
           asset {
             _id
+            assetId
           }
           alt
         }
@@ -69,6 +70,7 @@ export const query = graphql`
           }
           asset {
             _id
+            assetId
           }
           alt
         }
@@ -98,6 +100,7 @@ export const query = graphql`
           }
           asset {
             _id
+            assetId
           }
           alt
         }
@@ -127,6 +130,7 @@ export const query = graphql`
           }
           asset {
             _id
+            assetId
           }
           alt
         }
@@ -156,6 +160,7 @@ export const query = graphql`
           }
           asset {
             _id
+            assetId
           }
           alt
         }
@@ -185,6 +190,7 @@ export const query = graphql`
           }
           asset {
             _id
+            assetId
           }
           alt
         }
@@ -207,6 +213,7 @@ export const query = graphql`
           }
           asset {
             _id
+            assetId
           }
           alt
         }

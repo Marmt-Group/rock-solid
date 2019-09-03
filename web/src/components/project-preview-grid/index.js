@@ -34,7 +34,7 @@ const ProjectPreviewGrid = ({ gallery }) => {
                         </div>
                         <div className="lightbox__category">
                             <Lightbox data={gallery.commercial} type={'gallery'} />
-                            <p>commercial</p>
+                            <p>Commercial</p>
                         </div>
                         <div className="lightbox__category">
                             <Lightbox data={gallery.beforeAfter} type={'gallery-beforeAfter'} />

@@ -24,7 +24,7 @@ const Faqs = ({ imgUrl, nodes }) => {
         <div className="darken-bg">
             <div className="container">
                 <div className="row">
-                    <div className="col-sm-8">
+                    <div className="col-sm-9">
                         <Accordion defaultActiveKey="0">
                             {faqs &&
                                 faqs.map((node, index) => (

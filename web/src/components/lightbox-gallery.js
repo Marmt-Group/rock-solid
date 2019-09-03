@@ -9,7 +9,7 @@ const LightboxGallery = ({ assets, defaults }) => {
     const [photoIndex, setPhotoIndex] = useState(0)
     const [isOpen, setIsOpen] = useState(false)
     let galleryImgActive
-    let images
+    let images = []
 
     if (defaults.beforeAfter) {
         images = assets.nodes.reduce((acc, cur) => {
@@ -29,7 +29,14 @@ const LightboxGallery = ({ assets, defaults }) => {
             onClick={() => setIsOpen(true)}
         />
     } else {
-        images = assets.nodes.map(project => imageUrlFor(buildImageObj(project.mainImage)).maxWidth(1200).maxHeight(1200).url())
+        for (let project of assets.nodes) {
+            images.push(
+                {
+                    image: imageUrlFor(buildImageObj(project.mainImage)).maxWidth(1200).maxHeight(1200).url(),
+                    id: project.mainImage.asset.assetId.substr(project.mainImage.asset.assetId.length - 4) 
+                }
+            )
+        }
         galleryImgActive = <img
             src={imageUrlFor(buildImageObj(assets.nodes[0].mainImage))
                 .width(340)
@@ -39,6 +46,8 @@ const LightboxGallery = ({ assets, defaults }) => {
             onClick={() => setIsOpen(true)}
         />
     }
+
+    console.log(images)
     
 
     return (
@@ -50,9 +59,10 @@ const LightboxGallery = ({ assets, defaults }) => {
             {isOpen && (
                 <Lightbox
                     animationDisabled={true}
-                    mainSrc={images[photoIndex]}
-                    nextSrc={images[(photoIndex + 1) % images.length]}
-                    prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+                    mainSrc={images[photoIndex].image}
+                    nextSrc={images[(photoIndex + 1) % images.length].image}
+                    prevSrc={images[(photoIndex + images.length - 1) % images.length].image}
+                    imageTitle={`Image id: ${images[photoIndex].id}`}
                     onCloseRequest={() => setIsOpen(false)}
                     onMovePrevRequest={() =>
                         setPhotoIndex((photoIndex + images.length - 1) % images.length)

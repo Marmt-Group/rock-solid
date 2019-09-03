@@ -20,10 +20,9 @@ const HeroLarge = ({ imgUrl }) => {
     }
 
     return (
-    <section className="hero cover imagebg height-100 text-center" data-overlay="3">
+    <section className="hero cover imagebg height-100 text-center">
         <BackgroundImage Tag="div"
             fluid={imgUrl.childImageSharp.fluid}
-            backgroundColor={`#040e18`}
             style={{
                 backgroundAttachment: 'fixed',
                 backgroundRepeat: 'no-repeat',

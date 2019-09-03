@@ -18,12 +18,14 @@
     h1 {
         font-weight: 700; text-transform: uppercase;
         padding-bottom: 1em;
+        text-shadow: 2px 2px 3px rgba(0,0,0,.3);
         @include hide-for-slide-up;
         animation: reveal-slide-up 1.5s $cubic-ease 2s 1 normal forwards;
 
     }
     p {
         font-size: 1.7em;
+        text-shadow: 2px 2px 3px rgba(0,0,0,.3);
         @include hide-for-slide-up;
         animation: reveal-slide-up 1.5s $cubic-ease 2.5s 1 normal forwards;
     }
