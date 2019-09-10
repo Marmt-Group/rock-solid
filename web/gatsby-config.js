@@ -38,7 +38,6 @@ module.exports = {
  * work "out-of-the-box" with project credentials.
  */
 function requireConfig(path) {
-  console.log('token: ' + process.env.SANITY_TOKEN)
   try {
     return require('../studio/sanity.json')
   } catch (e) {

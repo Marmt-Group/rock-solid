@@ -54,7 +54,6 @@ const ContactForm = ({ showContact, onHideContact }) => {
 
         postData(`${process.env.GATSBY_FIREBASE_FUNCTION_URL}?mg_key=${process.env.GATSBY_MAILGUN_KEY}`, JSON.stringify(dataObj))
             .then(data => {
-                console.log(data)
                 // TODO, post message on screen
                 resetForm()
             }) 

@@ -47,9 +47,6 @@ const LightboxGallery = ({ assets, defaults }) => {
         />
     }
 
-    console.log(images)
-    
-
     return (
         <div className="lightbox-container">
             <div>
