@@ -15,8 +15,8 @@ const LightboxGallery = ({ assets, defaults }) => {
         images = assets.nodes.reduce((acc, cur) => {
             return acc.concat(
                 [
-                    imageUrlFor(buildImageObj(cur.beforeImage)).maxWidth(1200).maxHeight(1200).url(),
-                    imageUrlFor(buildImageObj(cur.afterImage)).maxWidth(1200).maxHeight(1200).url()
+                    { image: imageUrlFor(buildImageObj(cur.beforeImage)).maxWidth(1200).maxHeight(1200).url(), id: cur.beforeImage.asset.assetId.substr(cur.beforeImage.asset.assetId.length - 4)},
+                    { image: imageUrlFor(buildImageObj(cur.afterImage)).maxWidth(1200).maxHeight(1200).url(), id: cur.afterImage.asset.assetId.substr(cur.afterImage.asset.assetId.length - 4)}
                 ]
             )
         }, [])
@@ -28,6 +28,7 @@ const LightboxGallery = ({ assets, defaults }) => {
             alt="project gallery"
             onClick={() => setIsOpen(true)}
         />
+        console.log(images)
     } else {
         for (let project of assets.nodes) {
             images.push(
