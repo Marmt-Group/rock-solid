@@ -28,7 +28,6 @@ const LightboxGallery = ({ assets, defaults }) => {
             alt="project gallery"
             onClick={() => setIsOpen(true)}
         />
-        console.log(images)
     } else {
         for (let project of assets.nodes) {
             images.push(
