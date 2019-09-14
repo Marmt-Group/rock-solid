@@ -37,3 +37,7 @@
 .sc-header {
     background-color: $primary-teal;
 }
+
+.sc-message--content.sent .sc-message--text {
+    background-color: $primary-teal;
+}
