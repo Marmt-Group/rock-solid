@@ -89,7 +89,6 @@ class FormChatBot extends React.Component {
 
         if (!normalBizHours && this.state.normalHours) {
             this.handleUserResponseMessage('Sorry, it\'s outside of our normal business hours, I might not be able to respond.')
-            this.handleUserResponseMessage('Just in case, please leave your name and phone number or email and and I\'ll contact you asap! Thanks.')
             this.setState({ normalHours: false })
         }
         
