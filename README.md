@@ -1,7 +1,11 @@
 # Website for Rock Solid, Inc., The Concrete Coating Company
 
+## Clone it
+Pull a copy of the repo to local with `git clone https://github.com/Marmt-Group/client-rock-solid.git`
+
 ## Run it
-`npm start`
+To run locally do `npm start`
+
 - Studio at http://localhost:3333
 - Web frontend at http://localhost:8000
 - GraphiQL explorer at http://localhost:8000/___graphql
