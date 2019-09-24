@@ -29,7 +29,7 @@ const FeatureLarge = () => (
                         <div className="feature feature-2"> <i className="icon red icon-Geo2" icon-class=" icon-Geo2" title="icon-Geo2"></i>
                             <div className="feature__body">
                                 <h5>Anywhere in the San Francisco Bay Area</h5>
-                                <p> Take comfort in 6 months included support with a dedicated support forum. </p>
+                                <p>Take comfort in 6 months included support with a dedicated support forum.</p>
                             </div>
                         </div>
                     </div>
