@@ -11,7 +11,7 @@ const VideoCta = ({ videoCta, videoAsset }) => {
     }
 
     return (
-        <section className="video video-1 text-center imagebg" data-overlay="4">
+        <section className="video video-1 text-center imagebg">
             <BackgroundImage Tag="div"
                 fluid={videoCta.childImageSharp.fluid}
                 backgroundColor={`#040e18`}
@@ -23,7 +23,7 @@ const VideoCta = ({ videoCta, videoAsset }) => {
                     height: '270px'
                 }}
             ></BackgroundImage>
-            <div className="container">
+            <div className="container darken-bg">
                 <div className="row">
                     <div className="col-sm-12">
                         <Lightbox data={videoAsset} type={'video-cta'} usrOptions={options} />

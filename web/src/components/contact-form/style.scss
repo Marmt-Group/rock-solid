@@ -26,6 +26,12 @@
 
     .lead {
         line-height: 1.5;
+        font-size: 1em;
+
+        @media($media-min-medium) {
+           line-height: 1.36363636em;
+           font-size: 1.2em;
+        }
     }
 
     .no-boxed {
