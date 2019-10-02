@@ -1,5 +1,6 @@
 import React from "react"
 import BackgroundImage from 'gatsby-background-image'
+import { window } from 'browser-monads'
 import './style.scss'
 
 const HeroLarge = ({ imgUrl }) => {
@@ -21,15 +22,9 @@ const HeroLarge = ({ imgUrl }) => {
 
     return (
     <section className="hero cover imagebg height-100 text-center">
-        <BackgroundImage Tag="div"
+        <BackgroundImage className="bg-hero" Tag="div"
             fluid={imgUrl.childImageSharp.fluid}
-            style={{
-                backgroundAttachment: 'fixed',
-                backgroundRepeat: 'no-repeat',
-                width: '100%',
-                height: 'inherit',
-                padding: 0,
-            }}
+            style={{ backgroundAttachment: window.innerWidth > 768 ? 'fixed' : 'scroll' }}
         >
             <div className="container">
                 <div className="row">

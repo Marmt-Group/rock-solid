@@ -1,11 +1,19 @@
 @import '../../styles/mixins.scss';
 @import '../../styles/animations.scss';
+@import '../../styles/media-queries.scss';
 
 .hero {
     display: flex;
     align-items: center;
     min-height: 450px;
     @include height-100;
+
+    .bg-hero {
+        background-repeat: no-repeat;
+        width: 100%;
+        height: inherit;
+        padding: 0;
+    }
 
     .container, .row {
         height: 100%;

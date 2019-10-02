@@ -1,20 +1,14 @@
 import React from "react"
 import BackgroundImage from 'gatsby-background-image'
+import { window } from 'browser-monads'
 import './style.scss'
 
 const HeroNarrow = ({ imgUrl, header, lead }) => (
     <section className="hero narrow imagebg">
-        <BackgroundImage Tag="div"
+        <BackgroundImage className="bg-hero" Tag="div"
             fluid={imgUrl.childImageSharp.fluid}
-            backgroundColor={`#040e18`}
-            style={{
-                backgroundAttachment: 'fixed',
-                backgroundRepeat: 'no-repeat',
-                width: '100%',
-                height: 'inherit',
-                padding: 0,
-            }}
-        >
+            style={{backgroundAttachment: window.innerWidth > 768 ? 'fixed' : 'scroll'}}
+    >
         <div className="darken-bg">
             <div className="container">
                 <div className="row">
