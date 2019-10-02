@@ -24,7 +24,7 @@ const HeroLarge = ({ imgUrl }) => {
     <section className="hero cover imagebg height-100 text-center">
         <BackgroundImage className="bg-hero" Tag="div"
             fluid={imgUrl.childImageSharp.fluid}
-            style={{ backgroundAttachment: window.innerWidth > 768 ? 'fixed' : 'scroll' }}
+            style={{ backgroundAttachment: window.innerWidth > 2048 ? 'fixed' : 'scroll' }}
         >
             <div className="container">
                 <div className="row">

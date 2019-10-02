@@ -7,7 +7,7 @@ const HeroNarrow = ({ imgUrl, header, lead }) => (
     <section className="hero narrow imagebg">
         <BackgroundImage className="bg-hero" Tag="div"
             fluid={imgUrl.childImageSharp.fluid}
-            style={{backgroundAttachment: window.innerWidth > 768 ? 'fixed' : 'scroll'}}
+            style={{backgroundAttachment: window.innerWidth > 2048 ? 'fixed' : 'scroll'}}
     >
         <div className="darken-bg">
             <div className="container">
