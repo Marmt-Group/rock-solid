@@ -31,7 +31,7 @@ export const query = graphql`
       }
     }
 
-    videoCtaUrl: allSanityVideo(filter: {_id: {eq: "759fdb8e-f819-415c-9978-b99e81d80d3f"}}) {
+    videoCtaUrl: allSanityVideo(filter: {_id: {eq: "7fd9efd2-b8e8-4f3f-b64f-c0929e2e07e5"}}) {
       edges {
         node {
           video {

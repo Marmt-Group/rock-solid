@@ -24,6 +24,6 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-icons": "^3.7.0",
-    "sanity-plugin-mux-input": "^0.1.9"
+    "sanity-plugin-mux-input": "^0.2.1"
   }
 }
