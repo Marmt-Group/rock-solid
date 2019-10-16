@@ -29,7 +29,8 @@ const HeroLarge = ({ imgUrl }) => {
             <div className="container">
                 <div className="row">
                     <div className="col-sm-12">
-                        <h1>The concrete coating company</h1>
+                        <h1>Rock Solid, Inc</h1>
+                        <h2>The concrete coating company</h2>
                         <p className="lead">Serving the Bay Area Since 1994</p>
                     </div>
                     <div className="col-sm-12 text-center">

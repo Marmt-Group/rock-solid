@@ -24,18 +24,41 @@
     }
 
     h1 {
+        font-size: 2em;
         font-weight: 700; text-transform: uppercase;
-        padding-bottom: 1em;
+        padding-bottom: 0;
+        margin-bottom: 0;
         text-shadow: 2px 2px 3px rgba(0,0,0,.3);
         @include hide-for-slide-up;
         animation: reveal-slide-up 1.5s $cubic-ease 2s 1 normal forwards;
 
+        @media($media-min-large) {
+            font-size: 4.5em;
+        }
     }
+
+    h2 {
+        text-transform: uppercase;
+        font-size: 1.5em;
+        text-shadow: 2px 2px 3px rgba(0,0,0,.3);
+        @include hide-for-slide-up;
+        animation: reveal-slide-up 1.5s $cubic-ease 2s 1 normal forwards;
+
+        @media($media-min-large) {
+            font-size: 2em;
+            font-weight: 700;
+        }
+    }
+
     p {
-        font-size: 1.7em;
+        font-size: 1.15em;
         text-shadow: 2px 2px 3px rgba(0,0,0,.3);
         @include hide-for-slide-up;
         animation: reveal-slide-up 1.5s $cubic-ease 2.5s 1 normal forwards;
+
+        @media($media-min-large) {
+            font-size: 1.75em;
+        }
     }
 
     .icon-Arrow-Down2 {
