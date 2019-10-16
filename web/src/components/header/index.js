@@ -39,7 +39,7 @@ const Header = ({ siteTitle, showContact, onShowContact }) => {
                             </ul>
                         </div>
                         <div className="navbar__logo_container">
-                            <Link to='/'><img className="logo logo-dark" src={logo} alt={`${siteTitle} logo`} /></Link>
+                            <Link to='/'><img className="logo logo-dark" src={logo} alt="logo" /></Link>
                         </div>
                         <div className="navbar__menu_contact col-md-6">
                             <button className="btn btn--sm type--uppercase contact-us" onClick={!showContact ? onShowContact : null}> <span className="btn__text">Contact Us</span> </button>

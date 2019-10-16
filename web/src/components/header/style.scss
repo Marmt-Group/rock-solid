@@ -48,6 +48,7 @@
     
     &__logo_container {
         position: relative;
+        z-index: 1;
 
          @media ($media-min-large) {
             position: absolute;
@@ -55,9 +56,15 @@
             transform: translate(-50%, 0);
          }
 
+         a {display: block;}
+
         .logo {
             max-height: 2.857143em;
             max-width: none;
+
+            @media ($media-min-large) {
+                max-height: 3.857143em;
+            }
         }
     }
 
@@ -123,7 +130,7 @@
 
                 &:hover {
                     > a {
-                        opacity: 1;
+                        opacity: .5;
                     }
                 }
             }
@@ -134,7 +141,7 @@
 
             @media ($media-min-large) {
                 > li:not(:hover) > a {
-                    opacity: .5;
+                    opacity: 1;
                 }
             }
 
@@ -176,6 +183,7 @@
         position: absolute;
         top: 30px;
         right: 30px;
+        z-index: 5;
 
         .hamburger {
             outline: none;
