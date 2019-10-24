@@ -1356,22 +1356,22 @@
   resolved "https://registry.yarnpkg.com/@restart/hooks/-/hooks-0.3.8.tgz#2f34f503d92ad95586c34f1175d6743f3a520a4e"
   integrity sha512-0AO6p7iOqWeLu9++Qz1P0efRmA7nDT3uMx4banEUj0KZLNOBkK98zddsKtRjwBlJw2dbL/V+u5+recuCwjO/pg==
 
-"@sanity/block-content-to-hyperscript@^2.0.7":
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/@sanity/block-content-to-hyperscript/-/block-content-to-hyperscript-2.0.8.tgz#1993b418c28903ff39406ffcabf17c7e276fada3"
-  integrity sha512-rh1tSxMDHbcCK/7YyHxoK8NLhalNsbc+eYS+OM/4tE0RGq0TIYJqsM0Ifv+8h0ok5zf5vshFcoBf2YNRskdBIg==
+"@sanity/block-content-to-hyperscript@^2.0.10":
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/@sanity/block-content-to-hyperscript/-/block-content-to-hyperscript-2.0.10.tgz#9cf805c5d2341d043bcab8b3740c9b3466b5ae6b"
+  integrity sha512-xT3iEmZkK0fvO5PDFpn9GMWGfvOopvbrRCBU48XxpFoTxRrfsHhxbRy8J0eND1HGXHUENkIKv5jbohtGd1MiVg==
   dependencies:
     "@sanity/generate-help-url" "^0.140.0"
-    "@sanity/image-url" "^0.140.12"
+    "@sanity/image-url" "^0.140.15"
     hyperscript "^2.0.2"
     object-assign "^4.1.1"
 
 "@sanity/block-content-to-react@^2.0.6":
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/@sanity/block-content-to-react/-/block-content-to-react-2.0.6.tgz#be8b090e3c24d7bc66dc6a140dd5ee6ebd70713d"
-  integrity sha512-fLZKU+tZbJVzoKNOeWgRGQjIv9yoiYXOYq+1XhWyUlC167P2e663wCQe8fYhSzoM8Yn6FlsbC7UUtQANtLMNIA==
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/@sanity/block-content-to-react/-/block-content-to-react-2.0.7.tgz#6e257b5ab59ebe406005032eea586391d963eb93"
+  integrity sha512-oSriTf/3Ihnxp6AjEGiVjNPA2Iq/IFaWg4Frn5msGq5GT8N1kwLwxduig1OSn87UA15LNwiai9LAJwBR2k9lIg==
   dependencies:
-    "@sanity/block-content-to-hyperscript" "^2.0.7"
+    "@sanity/block-content-to-hyperscript" "^2.0.10"
     prop-types "^15.6.2"
 
 "@sanity/client@^0.140.11":
@@ -1404,6 +1404,11 @@
   version "0.140.12"
   resolved "https://registry.yarnpkg.com/@sanity/image-url/-/image-url-0.140.12.tgz#f882ad18f32b2e724c01ff692e62ae9f99702821"
   integrity sha512-/f+k4oibAgWVJ4rytCtvI09Frgl+xQJerYMn8CnBLofJEDq/3zHB+YBwS53ffCIHDpi/I5FL70zBGtUx64ZAnA==
+
+"@sanity/image-url@^0.140.15":
+  version "0.140.15"
+  resolved "https://registry.yarnpkg.com/@sanity/image-url/-/image-url-0.140.15.tgz#7b8afc49130398e1a6e7bde03b5961d2384f7676"
+  integrity sha512-SlL3JNWLmWEbnUW7B2vVIUazoRD/a6bg5D8nA4PNvRhu8EEE3WykrONQj7Ibpv/fAwTyxm1u2Hh+sy6f2FHvXg==
 
 "@sanity/mutator@^0.140.0":
   version "0.140.0"
