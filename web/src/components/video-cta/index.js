@@ -6,7 +6,7 @@ import './style.scss'
 const VideoCta = ({ videoCta, videoAsset }) => {
 
     let options = {
-        cta: 'Show me how this works!',
+        cta: 'Watch video to learn more!',
         // muted: false,
     }
 
