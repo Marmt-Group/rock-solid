@@ -7,7 +7,7 @@ const VideoCta = ({ videoCta, videoAsset }) => {
 
     let options = {
         cta: 'Watch video to learn more!',
-        // muted: false,
+        muted: false
     }
 
     return (
