@@ -24,7 +24,7 @@ const VideoPlayer = ({ data, options }) => {
                 autoplay={defaults.autoplay}
                 showControls={defaults.showControls}
                 loop={defaults.loop}
-                muted={defaults.muted}
+                muted={false}
                 className={defaults.className}
                 style={defaults.style}
                 height={defaults.height}
