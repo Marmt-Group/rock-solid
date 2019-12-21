@@ -19,7 +19,7 @@ const LightboxVideoCta = ({ video, options, showLightbox, onShowLightbox, onHide
         <Dialog>
             <VideoPlayer data={video} options={options} />
             <div className="closeButton" onClick={showLightbox ? onHideLightbox : null}>
-                <i class="icon  icon-Close-Window" icon-class=" icon-Close-Window" title="icon-Close-Window"></i>
+                <i className="icon  icon-Close-Window" title="icon-Close-Window"></i>
             </div>
         </Dialog>
         )}

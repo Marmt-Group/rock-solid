@@ -48,10 +48,10 @@
         border: 2px solid #ffffff;
         cursor: pointer;
         background: #ffffff;
-        margin-right: 1.85714286em;
 
         @media ($media-min-medium) {
             display: inline;
+            margin-right: 1.85714286em;
         }
 
         &:before {
