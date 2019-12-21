@@ -6,7 +6,7 @@ const VideoPlayer = ({ data, options }) => {
 
     let defaults = {
         autoload: true,
-        autoplay: true,
+        autoplay: false,
         showControls: true,
         loop: false,
         muted: false,
