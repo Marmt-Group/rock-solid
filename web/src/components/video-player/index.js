@@ -9,7 +9,7 @@ const VideoPlayer = ({ data, options }) => {
         autoplay: false,
         showControls: true,
         loop: false,
-        muted: true,
+        muted: false,
         className: '',
         style: { width: '100%', height: 'auto' },
         height: '',
