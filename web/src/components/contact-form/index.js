@@ -58,12 +58,19 @@ const ContactForm = ({ showContact, onHideContact }) => {
             .then(data => {
                 resetForm()
                 setMessageSuccess(true)
+                setTimeout(() => {
+                    setMessageSuccess(false)
+                }, 5000);
                 
             }) 
             .catch(error => {
                 resetForm()
                 setMessageError(true)
                 console.error(error)
+                setTimeout(() => {
+                    setMessageError(false)
+                }, 5000);
+                
         })
     }
 
