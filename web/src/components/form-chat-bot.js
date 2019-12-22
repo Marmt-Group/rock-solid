@@ -17,6 +17,7 @@ class FormChatBot extends React.Component {
             normalHours: true,
             messageList: [],
             isOpen: false,
+            firstChatSent: false,
             userName: ''
         }
     }
@@ -94,9 +95,15 @@ class FormChatBot extends React.Component {
 
     handleUserMessage = (newMessage) => {
 
+        if (!this.state.firstChatSent) {
+            this.setState({
+                userName: newMessage.data.text,
+                firstChatSent: true
+            })
+        }
+
         this.setState({
-            messageList: [...this.state.messageList, newMessage],
-            userName: newMessage.data.text
+            messageList: [...this.state.messageList, newMessage]
         })
 
         // check if normal business hours
