@@ -121,7 +121,7 @@ class FormChatBot extends React.Component {
                     twilioAccountSid: process.env.GATSBY_TWILIO_ACCOUNT_SID,
                     twilioAuthToken: process.env.GATSBY_TWILIO_AUTH_TOKEN,
                 },
-                message: `You are now in a chat with ${this.state.userName}`
+                message: `You are now in a chat with ${newMessage.data.text}`
             })
             // .then()
         } else {
