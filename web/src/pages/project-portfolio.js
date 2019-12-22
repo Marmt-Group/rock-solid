@@ -21,6 +21,7 @@ export const query = graphql`
       nodes {
         title
         publishedAt
+        _id
         mainImage {
           crop {
             _key
@@ -51,6 +52,7 @@ export const query = graphql`
       nodes {
         title
         publishedAt
+        _id
         mainImage {
           crop {
             _key
@@ -81,6 +83,7 @@ export const query = graphql`
       nodes {
         title
         publishedAt
+        _id
         mainImage {
           crop {
             _key
@@ -111,6 +114,7 @@ export const query = graphql`
       nodes {
         title
         publishedAt
+        _id
         mainImage {
           crop {
             _key
@@ -141,6 +145,7 @@ export const query = graphql`
       nodes {
         title
         publishedAt
+        _id
         mainImage {
           crop {
             _key
@@ -171,6 +176,7 @@ export const query = graphql`
       nodes {
         title
         publishedAt
+        _id
         beforeImage {
           crop {
             _key

@@ -1,3 +1,5 @@
+import moment from 'moment'
+
 export default {
   name: 'project',
   title: 'Project',
@@ -27,19 +29,35 @@ export default {
       of: [{ type: 'reference', to: { type: 'category' } }]
     }
   ],
+  orderings: [
+    {
+      title: 'ID, (Alphanumeric)',
+      name: 'projectId',
+      by: [
+        {field: '_id', direction: 'asc'}
+      ]
+    },
+    {
+      title: 'Category',
+      name: 'categoryName',
+      by: [
+        { field: 'categories', direction: 'asc' }
+      ]
+    }
+  ],
   preview: {
     select: {
+      id: '_id',
       title: 'title',
       publishedAt: 'publishedAt',
       image: 'mainImage'
     },
-    prepare({ title = 'No title', publishedAt, image }) {
+    prepare({ title = 'No title', id, publishedAt, image}) {
       return {
         title,
-        subtitle: publishedAt
-          ? new Date(publishedAt).toLocaleDateString()
-          : 'Missing publishing date',
-        media: image
+        subtitle: `ID: ${id.substr(0, 4)}`,
+        media: image,
+        description: moment(publishedAt).format('MMMM Do YYYY, h:mm:ss a')
       }
     }
   }
