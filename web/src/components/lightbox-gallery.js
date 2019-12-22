@@ -30,7 +30,6 @@ const LightboxGallery = ({ assets, defaults }) => {
         />
     } else {
         for (let project of assets.nodes) {
-            console.log(project)
             images.push(
                 {
                     image: imageUrlFor(buildImageObj(project.mainImage)).maxWidth(1200).maxHeight(1200).url(),
