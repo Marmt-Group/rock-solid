@@ -30,12 +30,12 @@ module.exports = {
         // watchMode: true // only in dev
       }
     },
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: "UA-XXXXXXXXX-X",
-    //   },
-    // }
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-154951575-1',
+      },
+    }
   ]
 }
 
