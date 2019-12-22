@@ -64,8 +64,11 @@ class FormChatBot extends React.Component {
             },
             message: `${this.state.userName ? this.state.userName : 'User'} has left the chat.`
         })
-        // remove socket
-        socket.disconnect();
+        .then(() => {
+            // remove socket
+            socket.disconnect();
+        })
+        
     }
 
     handleAddedToQue = () => {
@@ -131,8 +134,7 @@ class FormChatBot extends React.Component {
     }
 
     componentWillMount() {
-        this.handleUserResponseMessage('Hello, can I please have your name?')
-        this.handleUserResponseMessage('And what can we help you with?')
+        this.handleUserResponseMessage('Hello, can I please have your name? And what can we help you with?')
     }
 
     render() {
