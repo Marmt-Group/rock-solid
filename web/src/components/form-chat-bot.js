@@ -53,6 +53,18 @@ class FormChatBot extends React.Component {
 
     handleSocketDisconnect = () => {
         // console.log('Socket disconnected');
+        // Post disconnect message to Ted
+        handleFetch(`${socketUrl}/chat`, 'POST', {
+            query: {
+                connection: socket.id,
+                fromNumber: process.env.GATSBY_TWILLIO_FROM_NUMBER,
+                toNumber: process.env.GATSBY_TWILLIO_TO_NUMBER,
+                twilioAccountSid: process.env.GATSBY_TWILIO_ACCOUNT_SID,
+                twilioAuthToken: process.env.GATSBY_TWILIO_AUTH_TOKEN,
+            },
+            message: `${this.state.userName ? this.state.userName : 'User'} has left the chat.`
+        })
+        // remove socket
         socket.disconnect();
     }
 
@@ -120,6 +132,7 @@ class FormChatBot extends React.Component {
 
     componentWillMount() {
         this.handleUserResponseMessage('Hello, can I please have your name?')
+        this.handleUserResponseMessage('And what can we help you with?')
     }
 
     render() {
