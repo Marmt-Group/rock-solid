@@ -54,18 +54,17 @@ const ContactForm = ({ showContact, onHideContact }) => {
             dataObj[key] = value;
         }
 
-        setMessageError(true)
-
-        // postData(`${process.env.GATSBY_FIREBASE_FUNCTION_URL}?mg_key=${process.env.GATSBY_MAILGUN_KEY}`, JSON.stringify(dataObj))
-        //     .then(data => {
-        //         setMessageSuccess(true)
-        //         resetForm()
-        //     }) 
-        //     .catch(error => {
-        //         setMessageError(true)
-        //         console.error(error)
-        //         resetForm()
-        // })
+        postData(`${process.env.GATSBY_FIREBASE_FUNCTION_URL}?mg_key=${process.env.GATSBY_MAILGUN_KEY}`, JSON.stringify(dataObj))
+            .then(data => {
+                resetForm()
+                setMessageSuccess(true)
+                
+            }) 
+            .catch(error => {
+                resetForm()
+                setMessageError(true)
+                console.error(error)
+        })
     }
 
     return (
