@@ -57,7 +57,7 @@ class FormChatBot extends React.Component {
     }
 
     handleAddedToQue = () => {
-        this.handleUserResponseMessage(`Sorry ${this.state.userName}, Ted is chatting with another person, but wait, you're in que.`)
+        this.handleUserResponseMessage(`Sorry ${this.state.userName}, we're chatting with another person, but wait, you're in que.`)
     }
 
     handleRemoveFromQue = () => {
@@ -70,7 +70,7 @@ class FormChatBot extends React.Component {
                 twilioAccountSid: process.env.GATSBY_TWILIO_ACCOUNT_SID,
                 twilioAuthToken: process.env.GATSBY_TWILIO_AUTH_TOKEN,
             },
-            message: `Hi Ted, you're now in a chat with ${this.state.userName}`
+            message: `Hi from Rock Solid Chat Bot, you're now in a live chat with ${this.state.userName}`
         })
         .then(() => {
             this.handleUserResponseMessage(`Thanks for waiting, how can I help you!?`)
