@@ -95,13 +95,6 @@ class FormChatBot extends React.Component {
 
     handleUserMessage = (newMessage) => {
 
-        if (!this.state.firstChatSent) {
-            this.setState({
-                userName: newMessage.data.text,
-                firstChatSent: true
-            })
-        }
-
         this.setState({
             messageList: [...this.state.messageList, newMessage]
         })
@@ -113,19 +106,40 @@ class FormChatBot extends React.Component {
             this.handleUserResponseMessage('Sorry, it\'s outside of our normal business hours, I might not be able to respond.')
             this.setState({ normalHours: false })
         }
+
+        if (!this.state.firstChatSent) {
+            this.setState({
+                userName: newMessage.data.text,
+                firstChatSent: true
+            })
+            // Post intro message to Ted
+            handleFetch(`${socketUrl}/chat`, 'POST', {
+                query: {
+                    connection: socket.id,
+                    fromNumber: process.env.GATSBY_TWILLIO_FROM_NUMBER,
+                    toNumber: process.env.GATSBY_TWILLIO_TO_NUMBER,
+                    twilioAccountSid: process.env.GATSBY_TWILIO_ACCOUNT_SID,
+                    twilioAuthToken: process.env.GATSBY_TWILIO_AUTH_TOKEN,
+                },
+                message: `You are now in a chat with ${this.state.userName}`
+            })
+            // .then()
+        } else {
+            // Post message to Ted
+            handleFetch(`${socketUrl}/chat`, 'POST', {
+                query: {
+                    connection: socket.id,
+                    fromNumber: process.env.GATSBY_TWILLIO_FROM_NUMBER,
+                    toNumber: process.env.GATSBY_TWILLIO_TO_NUMBER,
+                    twilioAccountSid: process.env.GATSBY_TWILIO_ACCOUNT_SID,
+                    twilioAuthToken: process.env.GATSBY_TWILIO_AUTH_TOKEN,
+                },
+                message: newMessage.data.text
+            })
+            // .then()
+        }
         
-        // Post message to Ted
-        handleFetch(`${socketUrl}/chat`, 'POST', {
-            query: {
-                connection: socket.id,
-                fromNumber: process.env.GATSBY_TWILLIO_FROM_NUMBER,
-                toNumber: process.env.GATSBY_TWILLIO_TO_NUMBER,
-                twilioAccountSid: process.env.GATSBY_TWILIO_ACCOUNT_SID,
-                twilioAuthToken: process.env.GATSBY_TWILIO_AUTH_TOKEN,
-            },
-            message: newMessage.data.text
-        })
-       // .then()
+        
     }
 
     handleUserResponseMessage = (text) => {
