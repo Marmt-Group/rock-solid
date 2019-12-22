@@ -10,6 +10,8 @@ const ContactForm = ({ showContact, onHideContact }) => {
     const [emailInput, setEmailInput] = useState('')
     const [companyInput, setCompanyInput] = useState('')
     const [messageInput, setMessageInput] = useState('')
+    const [messageSuccess, setMessageSuccess] = useState(false)
+    const [messageError, setMessageError] = useState(false)
 
     const mapDefaults = {
         center: {
@@ -52,16 +54,18 @@ const ContactForm = ({ showContact, onHideContact }) => {
             dataObj[key] = value;
         }
 
-        postData(`${process.env.GATSBY_FIREBASE_FUNCTION_URL}?mg_key=${process.env.GATSBY_MAILGUN_KEY}`, JSON.stringify(dataObj))
-            .then(data => {
-                // TODO, post message on screen
-                resetForm()
-            }) 
-            .catch(error => {
-                // TODO, post we're sorry message
-                console.error(error)
-                resetForm()
-            })
+        setMessageError(true)
+
+        // postData(`${process.env.GATSBY_FIREBASE_FUNCTION_URL}?mg_key=${process.env.GATSBY_MAILGUN_KEY}`, JSON.stringify(dataObj))
+        //     .then(data => {
+        //         setMessageSuccess(true)
+        //         resetForm()
+        //     }) 
+        //     .catch(error => {
+        //         setMessageError(true)
+        //         console.error(error)
+        //         resetForm()
+        // })
     }
 
     return (
@@ -89,12 +93,12 @@ const ContactForm = ({ showContact, onHideContact }) => {
                             <p className="lead">Toll Free: <a href="tel:+18889929948">888.992.9948</a></p>
                             <p className="lead">Local: <a href="tel:+19259999119">925.999.9119</a></p>
                             <p className="lead">Address: 6287 Dougherty Road, Dublin, CA 94568</p>
-                            <p className="lead"> Give us a call or drop by anytime, we endeavour to answer all enquiries
+                            <p className="lead"> Give us a call any time, we endeavour to answer all enquiries
                             within 24 hours on business days. </p>
                             <p className="lead"> We are open from 9am — 5pm week days. </p>
                         </div>
-                        <div className="row">
-                            <form className="form-email" data-success="Thanks for your enquiry, we'll be in touch shortly." data-error="Please fill in all fields correctly." onSubmit={handleSubmit}>
+                        <div className="row form-container">
+                            <form className={`form-email ${messageSuccess ? 'form-sent' : ''}`} data-error="Please fill in all fields correctly." onSubmit={handleSubmit}>
                                 <div className="col-xs-12 form-group"> <label htmlFor="formName">Your Name:</label> 
                                     <input type="text" name="Name" value={nameInput} onChange={e => setNameInput(e.target.value)} id="formName" className="form-control validate-required" required /> 
                                 </div>
@@ -109,6 +113,15 @@ const ContactForm = ({ showContact, onHideContact }) => {
                                 </div>
                                 <button type="submit" className="btn btn-primary type--uppercase">Send Inquiry</button> 
                             </form>
+                            <div className={`form-email-success ${messageSuccess ? 'show' : ''}`}>
+                                <i className="icon icon-Happy" aria-hidden="true"></i>
+                                Message Sent! Thanks for your enquiry, we'll be in touch shortly.
+                            </div>
+                            <div className={`form-email-error ${messageError ? 'show' : ''}`}>
+                                <i className="icon icon-Warning-Window" aria-hidden="true"></i>
+                                Message not sent. Something went wrong, please just give us a call.
+                            </div>
+                            
                         </div>
                     </div>
                 </div>

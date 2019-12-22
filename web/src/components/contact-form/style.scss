@@ -67,6 +67,18 @@
         input, textarea {
             width: 100%;
         }
+
+        .form-container {
+            position: relative;
+        }
+
+        &.form-email {
+            
+        }
+
+        &.form-sent {
+            visibility: hidden;
+        }
     }
 
     form > div[class*='col-']:not(:last-child),
@@ -80,6 +92,37 @@
 
     form.form--clearfix {
         margin-left: -15px;
+    }
+
+    .form-email-success {
+        font-size: 1.25em;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+
+        .icon {
+            margin-right: 5px;
+        }
+
+        &.show {
+            opacity: 1;
+            transition: opacity .3s ease-in;
+        }
+    }
+
+    .form-email-error {
+        font-size: 1.25em;
+        margin-top: 10px;
+        opacity: 0;
+
+        .icon {
+            margin-right: 5px;
+        }
+
+        &.show {
+            opacity: 1;
+            transition: opacity .3s ease-in;
+        }
     }
 
     @media ($media-min-medium) {

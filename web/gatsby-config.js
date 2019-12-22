@@ -29,6 +29,12 @@ module.exports = {
         token: process.env.SANITY_TOKEN,
         // watchMode: true // only in dev
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-XXXXXXXXX-X",
+      },
     }
   ]
 }
