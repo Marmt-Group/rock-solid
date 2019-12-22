@@ -5,7 +5,7 @@ import './form-chat-bot.scss'
 import checkWorkingHours from '../utils/checkWorkingHours'
 import handleFetch from '../utils/fetch'
 
-const socketUrl = 'https://bagged-goose-89973.herokuapp.com'
+const socketUrl = process.env.GATSBY_SOCKET_URL
 let socket
 
 class FormChatBot extends React.Component {
@@ -65,8 +65,8 @@ class FormChatBot extends React.Component {
         handleFetch(`${socketUrl}/chat`, 'POST', {
             query: {
                 connection: socket.id,
-                fromNumber: '+18312469107',
-                toNumber: '+14084022790',
+                fromNumber: process.env.GATSBY_TWILLIO_FROM_NUMBER,
+                toNumber: process.env.GATSBY_TWILLIO_TO_NUMBER,
                 twilioAccountSid: process.env.GATSBY_TWILIO_ACCOUNT_SID,
                 twilioAuthToken: process.env.GATSBY_TWILIO_AUTH_TOKEN,
             },
