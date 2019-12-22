@@ -99,6 +99,8 @@ class FormChatBot extends React.Component {
             messageList: [...this.state.messageList, newMessage]
         })
 
+        console.log(this.state.messageList)
+
         // check if normal business hours
         const normalBizHours = checkWorkingHours()
 
