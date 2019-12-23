@@ -13,7 +13,7 @@
     "upgrade": "sanity upgrade"
   },
   "dependencies": {
-    "@sanity/base": "^0.142.6",
+    "@sanity/base": "^0.147.6",
     "@sanity/cli": "^0.142.7",
     "@sanity/components": "^0.142.6",
     "@sanity/core": "^0.142.6",
