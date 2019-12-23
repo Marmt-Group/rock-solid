@@ -16,7 +16,7 @@ const FeatureLarge = () => (
                         <div className="feature feature-2"> <i className="icon green icon-Money-Smiley" icon-class=" icon-Money-Smiley" title="icon-Money-Smiley"></i>
                             <div className="feature__body">
                                 <h5>No tear out needed!</h5>
-                                <p>Save time and money by avoiding demolition with existing walkways, patios, or pool decks.</p>
+                                <p>Save time and money by avoiding demolition with existing walkways, patios, pool decks, and more.</p>
                             </div>
                         </div>
                         <div className="feature feature-2"> <i className="icon yellow icon-Running" icon-class=" icon-Running" title="icon-Running"></i>
