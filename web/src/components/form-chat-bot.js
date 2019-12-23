@@ -157,7 +157,7 @@ class FormChatBot extends React.Component {
     }
 
     componentWillMount() {
-        this.handleUserResponseMessage('Hello, can I please have your name? And what can we help you with?')
+        this.handleUserResponseMessage('Hello, can I please have your name?')
     }
 
     render() {
