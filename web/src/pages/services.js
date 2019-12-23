@@ -38,7 +38,7 @@ const ServicesPage = props => {
   return (
     <Layout>
       <SEO title={'Services'} />
-      <HeroNarrow imgUrl={hero} header={'Rock Solid Inc specializes in beautiful concrete coatings'} lead={'The installation process takes approximately 5 days to complete (depending on your project of course). We believe we\'ve got the corner on the market.'} />
+      <HeroNarrow imgUrl={hero} header={'Rock Solid Inc specializes in beautiful concrete coatings'} lead={'From rustic to modern, we can turn your existing concrete into something beautiful. The installation process takes approximately 6 to 8 days to complete, depending on your project of course.'} />
       <FeatureProcess imageAsset={imageAsset} />
       <FormChatBot />
     </Layout>

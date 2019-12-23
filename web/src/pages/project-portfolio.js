@@ -260,7 +260,7 @@ const ProjectsPage = props => {
   return (
     <Layout>
       <SEO title={'Projects Portfolio'} />
-      <HeroNarrow imgUrl={hero} header={'If you imagine it, we can do it.'} lead={'We can even help guide you along if you’re not so sure what you want. Take a look through our concrete coating galleries to see our range of experience.'} />
+      <HeroNarrow imgUrl={hero} header={'If you imagine it, we can do it.'} lead={'Not sure what you’re looking for? No problem! We’re happy to help you design something beautiful. Take a look through our galleries to see some of our favorite designs.'} />
         {projectNodes && (
           <ProjectPreviewGrid
             gallery={projectNodes}
