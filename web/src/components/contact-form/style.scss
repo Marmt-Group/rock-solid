@@ -95,6 +95,7 @@
     }
 
     .form-email-success {
+        display: none;
         font-size: 1.25em;
         opacity: 0;
         position: absolute;
@@ -105,21 +106,24 @@
         }
 
         &.show {
+            display: block;
             opacity: 1;
             transition: opacity .3s ease-in;
         }
     }
 
     .form-email-error {
+        display: none;
         font-size: 1.25em;
-        margin-top: 10px;
-        opacity: 0;
+        position: absolute;
+        top: 50%;
 
         .icon {
             margin-right: 5px;
         }
 
         &.show {
+            display: block;
             opacity: 1;
             transition: opacity .3s ease-in;
         }
