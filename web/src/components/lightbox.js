@@ -5,7 +5,7 @@ import LightboxGallery from '../components/lightbox-gallery'
 import "@reach/dialog/styles.css"
 import './lightbox.scss'
 
-const Lightbox = ({ data, usrOptions, type }) => {
+const Lightbox = ({ data, usrOptions, type, largePreview }) => {
 
     const [showLightbox, setshowLightBox] = useState(false)
 
@@ -22,8 +22,9 @@ const Lightbox = ({ data, usrOptions, type }) => {
             <LightboxVideoCta video={data} options={usrOptions} showLightbox={showLightbox} onShowLightbox={handleShowLightbox} onHideLightbox={handleHideLightbox} />
         )
     } else if (type === 'gallery') {
+        console.log('large', largePreview)
         return (
-            <LightboxGallery assets={data} defaults={{}} />
+            <LightboxGallery assets={data} defaults={{}} largePreview={largePreview}/>
         )
     } else if (type === 'gallery-beforeAfter') {
         return (

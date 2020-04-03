@@ -77,10 +77,11 @@ const CommercialPage = props => {
   return (
     <Layout>
       <SEO title={'Projects Portfolio'} />
-      <HeroNarrow imgUrl={hero} header={'If you imagine it, we can do it.'} lead={'Not sure what you’re looking for? No problem! We’re happy to help you design something beautiful. Take a look through our galleries to see some of our favorite designs.'} />
+      <HeroNarrow imgUrl={hero} header={'Lorem ipsum dolor'} lead={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.'} />
         {projectNodes && (
           <ProjectPreviewGrid
             gallery={projectNodes}
+            largePreview={true}
           />
         )}
       <TestimonialSlider testimonials={testimonials} />
