@@ -5,6 +5,7 @@ import SEO from '../components/seo'
 import Layout from '../components/layout'
 import HeroNarrow from '../components/hero-narrow'
 import ProjectPreviewGrid from '../components/project-preview-grid'
+import CommercialVideoPortfolio from '../components/commercial-video-portfolio'
 import TestimonialSlider from '../components/testimonial-slider'
 
 export const query = graphql`
@@ -84,6 +85,7 @@ const CommercialPage = props => {
             largePreview={true}
           />
         )}
+      <CommercialVideoPortfolio />
       <TestimonialSlider testimonials={testimonials} />
     </Layout>
   )
