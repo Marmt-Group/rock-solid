@@ -6,7 +6,7 @@ import './style.scss'
 const HeroNarrow = ({ imgUrl, header, lead }) => (
     <section className="hero narrow imagebg">
         <BackgroundImage className="bg-hero" Tag="div"
-            fluid={imgUrl.childImageSharp.fluid}
+            fluid={imgUrl}
             style={{backgroundAttachment: window.innerWidth > 2048 ? 'fixed' : 'scroll'}}
     >
         <div className="darken-bg">

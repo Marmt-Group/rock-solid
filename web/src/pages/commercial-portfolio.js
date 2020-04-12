@@ -10,10 +10,22 @@ import TestimonialSlider from '../components/testimonial-slider'
 
 export const query = graphql`
   query CommercialPageQuery {
-    hero: file(relativePath: { eq: "pool-deck-3.jpeg" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 4160) {
-          ...GatsbyImageSharpFluid_withWebp
+    hero: allSanityProject(filter: {id: {}, _id: {eq: "ec06db87-0827-4f46-8804-7c3a16dee523"}}) {
+      edges {
+        node {
+          mainImage {
+            asset {
+              fluid {
+                srcSetWebp
+                srcSet
+                base64
+                src
+                srcWebp
+                aspectRatio
+                sizes
+              }
+            }
+          }
         }
       }
     }
@@ -61,7 +73,7 @@ export const query = graphql`
 
 const CommercialPage = props => {
   const { data, errors } = props
-  const hero = (data || {}).hero
+  const hero = (data || {}).hero.edges[0].node.mainImage.asset.fluid
   const testimonials = (data || {}).testimonials
   const projectNodes = {}
 

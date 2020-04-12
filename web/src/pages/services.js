@@ -30,7 +30,7 @@ export const query = graphql`
 const ServicesPage = props => {
 
   const { data } = props
-  const hero = (data || {}).hero
+  const hero = (data || {}).hero.childImageSharp.fluid
   //const videoAsset = (data || {}).videoCtaUrl.edges[0].node.video.asset
   const imageAsset = (data || {}).imageAsset
   
