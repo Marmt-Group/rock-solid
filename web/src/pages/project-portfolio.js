@@ -238,7 +238,7 @@ export const query = graphql`
 
 const ProjectsPage = props => {
   const { data, errors } = props
-  const hero = (data || {}).hero
+  const hero = (data || {}).hero.childImageSharp.fluid
   const testimonials = (data || {}).testimonials
   const projectNodes = {}
 
@@ -248,6 +248,8 @@ const ProjectsPage = props => {
   projectNodes.driveways = (data || {}).projects_driveways
   projectNodes.pools = (data || {}).projects_pooldecks
   projectNodes.beforeAfter = (data || {}).projects_beforeAfter
+
+  console.log('hero', hero)
 
   if (errors) {
     return (
