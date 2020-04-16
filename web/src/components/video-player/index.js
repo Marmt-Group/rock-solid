@@ -4,6 +4,8 @@ import './style.scss'
 
 const VideoPlayer = ({ data, options }) => {
 
+    console.log(data)
+
     let defaults = {
         autoload: true,
         autoplay: false,
