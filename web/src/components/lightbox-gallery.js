@@ -39,7 +39,7 @@ const LightboxGallery = ({ assets, defaults, largePreview }) => {
         }
         galleryImgActive = <img
             src={imageUrlFor(buildImageObj(assets.nodes[0].mainImage))
-                .width(largePreview ? 800 : 340)
+                .width(largePreview ? 1000 : 340)
                 .height(Math.floor((9 / 16) * 600))
                 .url()}
             alt="project gallery"

@@ -33,7 +33,7 @@ const ProjectPreviewGrid = ({ gallery, largePreview }) => {
                         {gallery.patios &&
                         <div className="lightbox__category">
                             <Lightbox data={gallery.patios} type={'gallery'} />
-                            <p>Patios &amp; Walkways</p>largelarge
+                            <p>Patios &amp; Walkways</p>
                         </div>
                         }
 

@@ -1,12 +1,8 @@
 import React from "react"
-// import Lightbox from '../lightbox'
-// import './style.scss'
+import VideoOneUp from '../video-1-up'
+import './style.scss'
 
-const CommercialVideoPortfolio = ({ }) => {
-
-    // let options = {
-    //     cta: 'Watch video to learn more!'
-    // }
+const CommercialVideoPortfolio = ({ videos }) => {
 
     return (
         <section className="video video-1 text-center">
@@ -16,14 +12,9 @@ const CommercialVideoPortfolio = ({ }) => {
                         <h1>Project Videos</h1>
                     </div>
                 </div>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-sm-12">
-                            {/* <Lightbox data={videoAsset} type={'video-cta'} usrOptions={options} /> */}
-                        </div>
-                        
-                    </div>
-                </div>
+                {videos.map((value, index) => (
+                    <VideoOneUp videoAsset={value.node.video.asset} key={index} />
+                ))}
             </div>
         </section>
     )

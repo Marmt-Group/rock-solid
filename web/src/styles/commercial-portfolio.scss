@@ -1,0 +1,32 @@
+@import './media-queries.scss';
+
+section {
+    .container {
+        width: 100%;
+        max-width: none;
+    }
+
+    .row {
+        margin: 0;
+    }
+
+    .gallery {
+        width: 100%;
+    }
+
+    .lightbox__category  {
+        padding: 0 15px;
+
+        img {
+            width: 100%;
+
+            @media ($media-min-medium) {
+                width: 83.33%;
+            }
+
+            @media ($media-min-large) {
+                width: 58.33%;
+            }
+        }
+    }
+}
