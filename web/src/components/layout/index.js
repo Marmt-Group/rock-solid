@@ -9,7 +9,7 @@ import 'modern-normalize/modern-normalize.css'
 import '../../styles/bootstrap.scss'
 import '../../styles/layout.scss'
 
-const Layout = ({ children }) => {
+const Layout = ({ children, hideCta = false }) => {
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -48,7 +48,9 @@ const Layout = ({ children }) => {
       />
       <>{children}</>
       <ContactForm showContact={showContact} onHideContact={handleHideContact} />
+      {!hideCta &&
       <FooterCta showContact={showContact} onShowContact={handleShowContact} />
+      }
       <Footer />
     </>
   )
