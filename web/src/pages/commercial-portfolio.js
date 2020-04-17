@@ -48,7 +48,9 @@ const CommercialPage = props => {
 
   return (
     <Layout hideCta={true}>
+      {videosFiltered &&
       <CommercialVideoPortfolio videos={videosFiltered} />
+      }
     </Layout>
   )
 }
