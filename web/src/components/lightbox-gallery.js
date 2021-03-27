@@ -5,7 +5,7 @@ import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import './lightbox.scss';
 
-const LightboxGallery = ({ assets, defaults }) => {
+const LightboxGallery = ({ assets, defaults, largePreview }) => {
     const [photoIndex, setPhotoIndex] = useState(0)
     const [isOpen, setIsOpen] = useState(false)
     let galleryImgActive
@@ -39,7 +39,7 @@ const LightboxGallery = ({ assets, defaults }) => {
         }
         galleryImgActive = <img
             src={imageUrlFor(buildImageObj(assets.nodes[0].mainImage))
-                .width(340)
+                .width(largePreview ? 1000 : 340)
                 .height(Math.floor((9 / 16) * 600))
                 .url()}
             alt="project gallery"

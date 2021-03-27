@@ -12,6 +12,11 @@ export default {
             name: 'title',
             title: 'Title',
             type: 'string'
+        },
+        {
+            name: 'password',
+            title: 'Password',
+            type: 'string'
         }
     ]
 }

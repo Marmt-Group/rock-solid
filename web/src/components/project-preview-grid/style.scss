@@ -23,16 +23,6 @@
             flex-wrap: wrap;
             flex-direction: row;
             justify-content: center;
-            // &:after {
-            //     content: '';
-            //     position: absolute;
-            //     right: 0;
-            //     top: 0;
-            //     bottom: 0;
-            //     width: 50px;
-            //     background: rgba(255,255,255, 1);
-            //     box-shadow: -16px -12px 33px -22px rgba(0,0,0,0.9);
-            // }
         }
     }
 
@@ -47,7 +37,7 @@
     }
 
     .lightbox__category {
-        border-right: 10px solid white;
+        // border-right: 10px solid white;
         flex: 1 auto;
         padding-bottom: 40px;
         text-align: center;
