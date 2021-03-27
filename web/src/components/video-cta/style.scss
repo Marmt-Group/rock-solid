@@ -35,6 +35,10 @@
 
         h2 {
             cursor: pointer;
+            
+            @media ($media-min-medium) {
+                margin: 1em 0;
+            }
         }
     }
 
@@ -48,10 +52,11 @@
         border: 2px solid #ffffff;
         cursor: pointer;
         background: #ffffff;
+        margin: 1em 0 0 0;
 
         @media ($media-min-medium) {
             display: inline;
-            margin-right: 1.85714286em;
+            margin: 2em 1.85714286em;
         }
 
         &:before {
